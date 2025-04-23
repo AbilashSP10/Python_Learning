@@ -76,7 +76,13 @@
 # for i in range(1,6):    
 #     print(i*V1)
 
-V1=int(input('''Enter which number's multiplication table you wish to display: '''))
+# V1=int(input('''Enter which number's multiplication table you wish to display: '''))
 
-for i in range(1,11):
-    print(i, '*', V1, '=', i*V1)
+# for i in range(1,11):
+#     print(i, '*', V1, '=', i*V1)
+
+sum=0
+for i in range (1,31,2):      
+    sum+=i
+print(sum)
+    
