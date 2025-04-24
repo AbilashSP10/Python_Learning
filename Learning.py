@@ -81,8 +81,65 @@
 # for i in range(1,11):
 #     print(i, '*', V1, '=', i*V1)
 
-sum=0
-for i in range (1,31,2):      
-    sum+=i
-print(sum)
-    
+# sum=0
+# for i in range (1,31,2):      
+#     sum+=i
+# print(sum)
+
+# i=10
+# while i>=0:
+#     print(i,end=', ')
+#     i-=1
+
+# i=10
+# while i<=200:
+#     print(i, end=', ')
+#     i+=10
+
+# V1=int(input('Enter the number you want to find the Factorial: '))
+# F=1
+
+# while V1>=1:    
+#     F*=V1    
+#     V1-=1
+# print(F)
+
+# while True:
+#     x=int(input('Enter a number '))
+#     if x==0:
+#         break
+
+Log=1
+Reg=2
+Das=3
+Ext=4
+
+while True:
+    print('1] Login')
+    print('2] Register')
+    print('3] Dashboard')
+    print('4] Exit')
+    V1=int(input('Enter your choice: '))
+    if V1==1:
+        VL1=input('Enter your name: ')
+        VL2=input('Enter your email: ')       
+        #print('Hello', VL1, 'your login is successful')
+        print(f"Hello {VL1} Welcome and your email is {VL2}")        
+        break
+    elif V1==2:
+        VR1=input('Enter your name: ')
+        VR2=input('Enter your email: ')
+        VR3=input('Enter a password: ')
+        print('Hello', VR1 ,'your registration is successfull')
+        break
+    elif V1==3:
+        print('Site Information')
+        print('Dashboard')
+        print('Contact US')
+        print('Go back to home page')
+        break
+    elif V1==4:
+        print('Thank you for visiting')
+    else:
+        print('You entered a wrong choice')
+        break
