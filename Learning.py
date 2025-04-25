@@ -109,37 +109,75 @@
 #     if x==0:
 #         break
 
-Log=1
-Reg=2
-Das=3
-Ext=4
+# Log=1
+# Reg=2
+# Das=3
+# Ext=4
 
-while True:
-    print('1] Login')
-    print('2] Register')
-    print('3] Dashboard')
-    print('4] Exit')
-    V1=int(input('Enter your choice: '))
-    if V1==1:
-        VL1=input('Enter your name: ')
-        VL2=input('Enter your email: ')       
-        #print('Hello', VL1, 'your login is successful')
-        print(f"Hello {VL1} Welcome and your email is {VL2}")        
-        break
-    elif V1==2:
-        VR1=input('Enter your name: ')
-        VR2=input('Enter your email: ')
-        VR3=input('Enter a password: ')
-        print('Hello', VR1 ,'your registration is successfull')
-        break
-    elif V1==3:
-        print('Site Information')
-        print('Dashboard')
-        print('Contact US')
-        print('Go back to home page')
-        break
-    elif V1==4:
-        print('Thank you for visiting')
-    else:
-        print('You entered a wrong choice')
-        break
+# while True:
+#     print('1] Login')
+#     print('2] Register')
+#     print('3] Dashboard')
+#     print('4] Exit')
+#     V1=int(input('Enter your choice: '))
+#     if V1==1:
+#         VL1=input('Enter your name: ')
+#         VL2=input('Enter your email: ')       
+#         #print('Hello', VL1, 'your login is successful')
+#         print(f"Hello {VL1} Welcome and your email is {VL2}")        
+#         break
+#     elif V1==2:
+#         VR1=input('Enter your name: ')
+#         VR2=input('Enter your email: ')
+#         VR3=input('Enter a password: ')
+#         print('Hello', VR1 ,'your registration is successfull')
+#         break
+#     elif V1==3:
+#         print('Site Information')
+#         print('Dashboard')
+#         print('Contact US')
+#         print('Go back to home page')
+#         break
+#     elif V1==4:
+#         print('Thank you for visiting')
+#     else:
+#         print('You entered a wrong choice')
+#         break
+
+
+def addi(V1, V2):
+    V3 = V1 + V2
+    return V3
+
+def subt(V1, V2):
+    V3 = V1 - V2
+    return V3
+
+def divi(V1, V2):
+    V3 = V1/V2
+    return V3
+
+def mult(V1, V2):
+    V3 = V1*V2
+    return V3
+
+def modul(V1, V2):
+    V3 = V1%V2
+    return V3
+
+V1=int(input('Enter the first number: '))
+V2=int(input('Enter the second number: '))
+opr=(input('Enter which operation you would like to perform [+, -, /, *, %]: '))
+
+if opr == '+':
+    print(f"Addition of {V1} and {V2} gives:", addi(V1, V2))
+elif opr == '-':
+    print(f"Subtraction of {V1} and {V2} gives:", subt(V1, V2))
+elif opr == '*':
+    print(f"Multiplication of {V1} and {V2} gives:", mult(V1, V2))
+elif opr == '/':
+    print(f"Division of {V1} and {V2} gives:", divi(V1, V2))
+elif opr == '%':
+    print(f"Modulus of {V1} and {V2} returns:", modul(V1, V2))
+else:
+    print('You have entered a wrong operation')
