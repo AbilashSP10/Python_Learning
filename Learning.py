@@ -145,39 +145,72 @@
 #         break
 
 
-def addi(V1, V2):
-    V3 = V1 + V2
-    return V3
+# def addi(V1, V2):
+#     V3 = V1 + V2
+#     return V3
 
-def subt(V1, V2):
-    V3 = V1 - V2
-    return V3
+# def subt(V1, V2):
+#     V3 = V1 - V2
+#     return V3
 
-def divi(V1, V2):
-    V3 = V1/V2
-    return V3
+# def divi(V1, V2):
+#     V3 = V1/V2
+#     return V3
 
-def mult(V1, V2):
-    V3 = V1*V2
-    return V3
+# def mult(V1, V2):
+#     V3 = V1*V2
+#     return V3
 
-def modul(V1, V2):
-    V3 = V1%V2
-    return V3
+# def modul(V1, V2):
+#     V3 = V1%V2
+#     return V3
 
-V1=int(input('Enter the first number: '))
-V2=int(input('Enter the second number: '))
-opr=(input('Enter which operation you would like to perform [+, -, /, *, %]: '))
+# V1=int(input('Enter the first number: '))
+# V2=int(input('Enter the second number: '))
+# opr=(input('Enter which operation you would like to perform [+, -, /, *, %]: '))
 
-if opr == '+':
-    print(f"Addition of {V1} and {V2} gives:", addi(V1, V2))
-elif opr == '-':
-    print(f"Subtraction of {V1} and {V2} gives:", subt(V1, V2))
-elif opr == '*':
-    print(f"Multiplication of {V1} and {V2} gives:", mult(V1, V2))
-elif opr == '/':
-    print(f"Division of {V1} and {V2} gives:", divi(V1, V2))
-elif opr == '%':
-    print(f"Modulus of {V1} and {V2} returns:", modul(V1, V2))
-else:
-    print('You have entered a wrong operation')
+# if opr == '+':
+#     print(f"Addition of {V1} and {V2} gives:", addi(V1, V2))
+# elif opr == '-':
+#     print(f"Subtraction of {V1} and {V2} gives:", subt(V1, V2))
+# elif opr == '*':
+#     print(f"Multiplication of {V1} and {V2} gives:", mult(V1, V2))
+# elif opr == '/':
+#     print(f"Division of {V1} and {V2} gives:", divi(V1, V2))
+# elif opr == '%':
+#     print(f"Modulus of {V1} and {V2} returns:", modul(V1, V2))
+# else:
+#     print('You have entered a wrong operation')
+
+# class Car:
+#     no_of_wheels=4
+#     mileage=20
+#     car_make='BMW'
+
+# obj=Car()
+
+# print(obj.no_of_wheels)
+# print(obj.mileage)
+# print(obj.car_make)
+
+# obj.car_make=input('Enter your Car Make: ')
+# print(obj.car_make)
+
+class BankDetails:
+    Acc_Name='Krishnan'
+    Acc_Number=98765898650
+    Acc_Balance=5000
+
+obj=BankDetails()
+
+print(obj.Acc_Name)
+print(obj.Acc_Number)
+print(obj.Acc_Balance)
+
+obj.Acc_Name=input('Enter the Account holder name: ')
+obj.Acc_Number=int(input('Enter your Account Number: '))
+obj.Acc_Balance=int(input('Enter your Account Balance: '))
+
+print(obj.Acc_Name)
+print(obj.Acc_Number)
+print(obj.Acc_Balance)
