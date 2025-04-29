@@ -196,21 +196,30 @@
 # obj.car_make=input('Enter your Car Make: ')
 # print(obj.car_make)
 
-class BankDetails:
-    Acc_Name='Krishnan'
-    Acc_Number=98765898650
-    Acc_Balance=5000
+# class BankDetails:
+#     Acc_Name='Krishnan'
+#     Acc_Number=98765898650
+#     Acc_Balance=5000
 
-obj=BankDetails()
+# obj=BankDetails()
 
-print(obj.Acc_Name)
-print(obj.Acc_Number)
-print(obj.Acc_Balance)
+# print(obj.Acc_Name)
+# print(obj.Acc_Number)
+# print(obj.Acc_Balance)
 
-obj.Acc_Name=input('Enter the Account holder name: ')
-obj.Acc_Number=int(input('Enter your Account Number: '))
-obj.Acc_Balance=int(input('Enter your Account Balance: '))
+# obj.Acc_Name=input('Enter the Account holder name: ')
+# obj.Acc_Number=int(input('Enter your Account Number: '))
+# obj.Acc_Balance=int(input('Enter your Account Balance: '))
 
-print(obj.Acc_Name)
-print(obj.Acc_Number)
-print(obj.Acc_Balance)
+# print(obj.Acc_Name)
+# print(obj.Acc_Number)
+# print(obj.Acc_Balance)
+
+class Car:
+    def __init__(self,number_of_wheels):
+        self.number_of_wheels=number_of_wheels
+        print(self.number_of_wheels)
+
+number_of_wheels=int(input('Enter the number of Wheels: '))
+obj=Car(number_of_wheels)
+obj
