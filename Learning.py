@@ -215,11 +215,76 @@
 # print(obj.Acc_Number)
 # print(obj.Acc_Balance)
 
-class Car:
-    def __init__(self,number_of_wheels):
-        self.number_of_wheels=number_of_wheels
-        print(self.number_of_wheels)
+# class Car:
+#     def __init__(self,number_of_wheels):
+#         self.number_of_wheels=number_of_wheels
+#         print(self.number_of_wheels)
 
-number_of_wheels=int(input('Enter the number of Wheels: '))
-obj=Car(number_of_wheels)
-obj
+# number_of_wheels=int(input('Enter the number of Wheels: '))
+# obj=Car(number_of_wheels)
+# obj
+
+# class Calct:
+
+#     def __init__(self,a,b):
+#         self.a=a
+#         self.b=b
+#         print('This is constructor', a+b)
+
+#     def __del__(self):        
+#         # print('This is destructor', self.a, self.b, self)
+#         print('This is destructor', self)
+
+#     def __str__(self):        
+#         return f"First value: {self.a} and Second value: {self.b}"
+
+# a=int(input('Enter the First value: '))
+# b=int(input('Enter the Second value: '))
+
+# obj = Calct(a,b)    
+
+# print(f"{a} and {b}")
+# print('This is a test message')
+
+class Students:
+
+    def __init__(self,sname,M1,M2,M3,M4,M5):
+        self.sname=sname
+        self.M1=M1
+        self.M2=M2
+        self.M3=M3
+        self.M4=M4
+        self.M5=M5
+    
+    def Details(self):    
+        print(f"Student Name is: {self.sname}")
+        print(f"Marks got for first subject: {self.M1}")
+        print(f"Marks got for second subject: {self.M2}")
+        print(f"Marks got for third subject: {self.M3}")
+        print(f"Marks got for fourth subject: {self.M4}")
+        print(f"Marks got for fifth subject: {self.M5}")
+
+    def Avrg(self):
+        A=(self.M1+self.M2+self.M3+self.M4+self.M5)/5
+        print(f"Average Marks are: {A}")
+
+    def __del__(self):
+        print('Initialising destructor',self.sname)
+
+    def __str__(self):
+       return self.sname
+
+sname=input("Enter your Full Name: ")
+M1=int(input("Enter the Mark got for the first Subject: "))
+M2=int(input("Enter the Mark got for the second Subject: "))
+M3=int(input("Enter the Mark got for the third Subject: "))
+M4=int(input("Enter the Mark got for the fourth Subject: "))
+M5=int(input("Enter the Mark got for the fifth Subject: "))
+
+obj=Students(sname,M1,M2,M3,M4,M5)
+obj.Details()
+obj.Avrg()
+
+
+
+        
