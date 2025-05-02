@@ -246,45 +246,111 @@
 # print(f"{a} and {b}")
 # print('This is a test message')
 
-class Students:
+# class Students:
 
-    def __init__(self,sname,M1,M2,M3,M4,M5):
-        self.sname=sname
-        self.M1=M1
-        self.M2=M2
-        self.M3=M3
-        self.M4=M4
-        self.M5=M5
+#     def __init__(self,sname,M1,M2,M3,M4,M5):
+#         self.sname=sname
+#         self.M1=M1
+#         self.M2=M2
+#         self.M3=M3
+#         self.M4=M4
+#         self.M5=M5
     
-    def Details(self):    
-        print(f"Student Name is: {self.sname}")
-        print(f"Marks got for first subject: {self.M1}")
-        print(f"Marks got for second subject: {self.M2}")
-        print(f"Marks got for third subject: {self.M3}")
-        print(f"Marks got for fourth subject: {self.M4}")
-        print(f"Marks got for fifth subject: {self.M5}")
+#     def Details(self):    
+#         print(f"Student Name is: {self.sname}")
+#         print(f"Marks got for first subject: {self.M1}")
+#         print(f"Marks got for second subject: {self.M2}")
+#         print(f"Marks got for third subject: {self.M3}")
+#         print(f"Marks got for fourth subject: {self.M4}")
+#         print(f"Marks got for fifth subject: {self.M5}")
 
-    def Avrg(self):
-        A=(self.M1+self.M2+self.M3+self.M4+self.M5)/5
-        print(f"Average Marks are: {A}")
+#     def Avrg(self):
+#         A=(self.M1+self.M2+self.M3+self.M4+self.M5)/5
+#         print(f"Average Marks are: {A}")
 
-    def __del__(self):
-        print('Initialising destructor',self.sname)
+#     def __del__(self):
+#         print('Initialising destructor',self.sname)
 
-    def __str__(self):
-       return self.sname
+#     def __str__(self):
+#        return self.sname
 
-sname=input("Enter your Full Name: ")
-M1=int(input("Enter the Mark got for the first Subject: "))
-M2=int(input("Enter the Mark got for the second Subject: "))
-M3=int(input("Enter the Mark got for the third Subject: "))
-M4=int(input("Enter the Mark got for the fourth Subject: "))
-M5=int(input("Enter the Mark got for the fifth Subject: "))
+# sname=input("Enter your Full Name: ")
+# M1=int(input("Enter the Mark got for the first Subject: "))
+# M2=int(input("Enter the Mark got for the second Subject: "))
+# M3=int(input("Enter the Mark got for the third Subject: "))
+# M4=int(input("Enter the Mark got for the fourth Subject: "))
+# M5=int(input("Enter the Mark got for the fifth Subject: "))
 
-obj=Students(sname,M1,M2,M3,M4,M5)
-obj.Details()
-obj.Avrg()
+# obj=Students(sname,M1,M2,M3,M4,M5)
+# obj.Details()
+# obj.Avrg()
 
 
+# class Hospital:
 
+#     def __init__(self,sname,Temp,Bdyp,tirness):
+#         self.sname=sname
+#         self.Temp=Temp
+#         self.Bdyp=Bdyp
+#         self.tirness=tirness
+
+#     def Pdetails(self):
+#         print(f"Your name is: {self.sname}")
+#         print(f"Your Temperature is: {self.Temp}")
+#         print(f"You have Body Pain: {self.Bdyp}")
+#         print(f"You have Tiredness: {self.tirness}")
+
+#     def Sick(self):
+#         if (self.Temp>99) or (self.Bdyp=='Y') and (self.tirness=='Y'):
+#             print(f"Hi {self.sname} you have fever")
+#         else:
+#             print(f"Hi {self.sname} you don't have fever")
+
+#     def __del__(self):
+#         print(f"Record for {self.sname} is deleted")
+
+#     def __str__(self):
+#         return self.sname
+    
+# sname=input('Enter your name: ')
+# Temp=int(input('Enter the current reading of your Temperature in digits: '))
+# Bdyp=input('''Enter Y if you have body pain and N if you don't have body pain: ''')
+# tirness=input('''Enter Y if you have tiredness and N if you don't have tiredness: ''')
+
+# hsptl=Hospital(sname,Temp,Bdyp,tirness)
+# hsptl.Pdetails()
+# hsptl.Sick()
+
+
+class CheckCount:
+    ActO=input("Enter the First Actor Name: ")
+    ActT=input("Enter the Second Actor Name: ")
+
+    while True:
+        CountO=0
+        CountT=0
+        Vote=input("Enter A if you wish to Vote for Actor 1 and Enter B for Actor 2: ")
+        if Vote=='A':
+            CountO+=1
+        elif Vote=='B':
+            CountT+=1        
+        else:
+            Res=input("Press Y if you wish to see the result and N to continue: ")
+            if Res=='Y':
+                print(f"{ActO} gets {CountO} votes")
+                print(f"{ActT} gets {CountT} votes")            
+                break
+            if(CountO>CountT):
+                A=CountO - CountT
+                print(f"{ActO} wins by {A} votes")
+            elif(CountT>CountO):
+                B=CountT - CountO
+                print(f"{ActT} wins by {B} votes")
+            elif(CountO==CountT):
+                print(f"{ActO} and {ActT} gets same amount of votes")
+            else:
+                print("NO Result")
+                break
         
+
+
