@@ -322,35 +322,59 @@
 # hsptl.Sick()
 
 
-class CheckCount:
+class Actor:
+
+  def Vote(self):
+
+    print("Name the two Actors who you want to do Voting")
+
     ActO=input("Enter the First Actor Name: ")
     ActT=input("Enter the Second Actor Name: ")
 
+    CountAO=0
+    CountBT=0
+
     while True:
-        CountO=0
-        CountT=0
-        Vote=input("Enter A if you wish to Vote for Actor 1 and Enter B for Actor 2: ")
-        if Vote=='A':
-            CountO+=1
-        elif Vote=='B':
-            CountT+=1        
+      
+      print(f"Enter A for {ActO} and B for {ActT}")
+      C=input("Enter your choice: ")
+
+      if C=='A' or C=='a':
+        CountAO+=1        
+        print("If you wish to continue voting Press Y else N")
+        VA=input("Enter Y/N: ")
+        if VA=='Y' or VA=='y':
+          print("Voting continuing")
+          continue
         else:
-            Res=input("Press Y if you wish to see the result and N to continue: ")
-            if Res=='Y':
-                print(f"{ActO} gets {CountO} votes")
-                print(f"{ActT} gets {CountT} votes")            
-                break
-            if(CountO>CountT):
-                A=CountO - CountT
-                print(f"{ActO} wins by {A} votes")
-            elif(CountT>CountO):
-                B=CountT - CountO
-                print(f"{ActT} wins by {B} votes")
-            elif(CountO==CountT):
-                print(f"{ActO} and {ActT} gets same amount of votes")
-            else:
-                print("NO Result")
-                break
-        
+          print("Voting closed")
+          break
+
+      elif C=='B' or C=='b':
+        CountBT+=1
+        print("If you wish to continue voting Press Y else N")
+        VA=input("Enter Y/N: ")
+        if VA=='Y' or VA=='y':
+          print("Voting continuing")
+          continue
+        else:
+          print("Voting closed")
+          break
+
+      else:
+        print("Wrong choice")
+        break
+    
+    print(f"{ActO} got {CountAO} votes and {ActT} got {CountBT} votes")    
+
+Voting=Actor()
+Voting.Vote()
+      
+    
+       
+    
+    
+    
+
 
 
