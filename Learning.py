@@ -322,55 +322,155 @@
 # hsptl.Sick()
 
 
-class Actor:
+# class Actor:
 
-  def Vote(self):
+#   def Vote(self):
 
-    print("Name the two Actors who you want to do Voting")
+#     print("Name the two Actors who you want to do Voting")
 
-    ActO=input("Enter the First Actor Name: ")
-    ActT=input("Enter the Second Actor Name: ")
+#     ActO=input("Enter the First Actor Name: ")
+#     ActT=input("Enter the Second Actor Name: ")
 
-    CountAO=0
-    CountBT=0
+#     CountAO=0
+#     CountBT=0
 
-    while True:
+#     while True:
       
-      print(f"Enter A for {ActO} and B for {ActT}")
-      C=input("Enter your choice: ")
+#       print(f"Enter A for {ActO} and B for {ActT}")
+#       C=input("Enter your choice: ")
 
-      if C=='A' or C=='a':
-        CountAO+=1        
-        print("If you wish to continue voting Press Y else N")
-        VA=input("Enter Y/N: ")
-        if VA=='Y' or VA=='y':
-          print("Voting continuing")
-          continue
-        else:
-          print("Voting closed")
-          break
+#       if C=='A' or C=='a':
+#         CountAO+=1        
+#         print("If you wish to continue voting Press Y else N")
+#         VA=input("Enter Y/N: ")
+#         if VA=='Y' or VA=='y':
+#           print("Voting continuing")
+#           continue
+#         else:
+#           print("Voting closed")
+#           break
 
-      elif C=='B' or C=='b':
-        CountBT+=1
-        print("If you wish to continue voting Press Y else N")
-        VA=input("Enter Y/N: ")
-        if VA=='Y' or VA=='y':
-          print("Voting continuing")
-          continue
-        else:
-          print("Voting closed")
-          break
+#       elif C=='B' or C=='b':
+#         CountBT+=1
+#         print("If you wish to continue voting Press Y else N")
+#         VA=input("Enter Y/N: ")
+#         if VA=='Y' or VA=='y':
+#           print("Voting continuing")
+#           continue
+#         else:
+#           print("Voting closed")
+#           break
+
+#       else:
+#         print("Wrong choice")
+#         break
+    
+#     print(f"{ActO} got {CountAO} votes and {ActT} got {CountBT} votes")    
+
+# Voting=Actor()
+# Voting.Vote()
+      
+
+# class StudentDetails:
+
+#     def __init__(self,sname,Rno,M1,M2,M3,M4,M5):
+#         self.sname=sname
+#         self.Rno=Rno
+#         self.M1=M1
+#         self.M2=M2
+#         self.M3=M3
+#         self.M4=M4
+#         self.M5=M5
+
+#     def DispDetails(self):
+#         print(f"\n{self.sname} Please see your result below:")
+#         print(f"Name: {self.sname}")
+#         print(f"Roll Number: {self.Rno}")
+#         print(f"Marks for the 5 subjects are: {self.M1}, {self.M2}, {self.M3}, {self.M4}, {self.M5}")
+
+#     def MrkAvg(self):
+#         Avg=(self.M1 + self.M2 + self.M3 + self.M4 + self.M5)/5
+#         return Avg
+        
+
+#     def TotMrk(self):
+#         Tot=(self.M1 + self.M2 + self.M3 + self.M4 + self.M5)
+#         print(f"{self.sname} your total marks are {Tot}")
+
+# class Result(StudentDetails):
+    
+    
+#     def __init__(self, sname, Rno, M1, M2, M3, M4, M5):
+#         super().__init__(sname, Rno, M1, M2, M3, M4, M5)   
+    
+
+#     def Grade(self):
+#       C=super().MrkAvg()
+#       if C >80:
+#         print(f"{self.sname} you have got distinction\n")
+
+#       elif C>60 and C<80:
+#          print(f"{self.sname} you have got First Class\n")
+
+#       elif C>50 and C<60:
+#          print(f"{self.sname} you have got Second Class\n")
+
+#       elif C>40 and C<50:
+#          print(f"{self.sname} you have got Third Class\n")
+
+#       elif C<40:
+#          print(f"{self.sname} you have failed\n")
+        
+#       else:
+#         print(f"{self.sname} your result is withheld\n")
+            
+
+# sname=input("Enter your Name: ")
+# Rno=int(input("Enter your Roll Number: "))
+# M1=int(input("Enter your First Mark: "))
+# M2=int(input("Enter your Second Mark: "))
+# M3=int(input("Enter your Third Mark: "))
+# M4=int(input("Enter your Fourth Mark: "))
+# M5=int(input("Enter your Fifth Mark: "))
+
+# StudDtls=Result(sname,Rno,M1,M2,M3,M4,M5)
+# StudDtls.DispDetails()
+# StudDtls.Grade()
+# StudDtls
+
+class Sickdtls():
+    
+    def __init__(self,pname,Temp,BdyPn,CouCol):
+        self.pname=pname
+        self.Temp=Temp
+        self.BdyPn=BdyPn
+        self.CouCol=CouCol
+        
+    def DispDetls(self):
+      print(f"You have entered the details below: ")
+      print(f"Your Name: {self.pname}")
+      print(f"Temperature: {self.Temp}")
+      print(f"Body Pain: {self.BdyPn}")
+      print(f"Cough or Cold: {self.CouCol}")
+
+class SickOrNo(Sickdtls):
+   
+   def __init__(self,pname,Temp,Bdypn,CouCol):
+      super().__init__(pname,Temp,Bdypn,CouCol)
+  
+   def SickRslt(self):
+      
+      if self.Temp>99:
+         print(f"{self.pname} you have fever")
+
+      elif self.BdyPn=='Y' or self.BdyPn=='y' and self.CouCol=='Y' or self.CouCol=='y':
+         print(f"{self.pname} you have fever")
 
       else:
-        print("Wrong choice")
-        break
-    
-    print(f"{ActO} got {CountAO} votes and {ActT} got {CountBT} votes")    
+         print(f"{self.pname} you do not have fever")
 
-Voting=Actor()
-Voting.Vote()
-      
-    
+
+
        
     
     
