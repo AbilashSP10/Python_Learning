@@ -438,43 +438,130 @@
 # StudDtls.Grade()
 # StudDtls
 
-class Sickdtls():
+# class Sickdtls():
     
-    def __init__(self,pname,Temp,BdyPn,CouCol):
-        self.pname=pname
-        self.Temp=Temp
-        self.BdyPn=BdyPn
-        self.CouCol=CouCol
+#     def __init__(self,pname,Temp,BdyPn,CouCol):
+#         self.pname=pname
+#         self.Temp=Temp
+#         self.BdyPn=BdyPn
+#         self.CouCol=CouCol
         
-    def DispDetls(self):
-      print(f"You have entered the details below: ")
-      print(f"Your Name: {self.pname}")
-      print(f"Temperature: {self.Temp}")
-      print(f"Body Pain: {self.BdyPn}")
-      print(f"Cough or Cold: {self.CouCol}")
+#     def DispDetls(self):
+#       print(f"You have entered the details below: ")
+#       print(f"Your Name: {self.pname}")
+#       print(f"Temperature: {self.Temp}")
+#       print(f"Body Pain: {self.BdyPn}")
+#       print(f"Cough or Cold: {self.CouCol}")
 
-class SickOrNo(Sickdtls):
+# class SickOrNo(Sickdtls):
    
-   def __init__(self,pname,Temp,Bdypn,CouCol):
-      super().__init__(pname,Temp,Bdypn,CouCol)
+#    def __init__(self,pname,Temp,Bdypn,CouCol):
+#       super().__init__(pname,Temp,Bdypn,CouCol)
   
-   def SickRslt(self):
+#    def SickRslt(self):
       
-      if self.Temp>99:
-         print(f"{self.pname} you have fever")
+#       if self.Temp>99:
+#          print(f"{self.pname} you have fever")
 
-      elif self.BdyPn=='Y' or self.BdyPn=='y' and self.CouCol=='Y' or self.CouCol=='y':
-         print(f"{self.pname} you have fever")
+#       elif self.BdyPn=='Y' or self.BdyPn=='y' and self.CouCol=='Y' or self.CouCol=='y':
+#          print(f"{self.pname} you have fever")
 
-      else:
-         print(f"{self.pname} you do not have fever")
+#       else:
+#          print(f"{self.pname} you do not have fever")
 
+# class Parent():
+    
+#     def __init__(self, name, age):
+#         self.name=name
+#         self.age=age
+        
+#     def Name(self):
+#       print(f"Your name is: {self.name}")
 
+#     def Age(self):
+#        print(f"Your age is {self.age}")
 
+# class Child(Parent):
+
+#    def Welcome(self):
+#       print("You are welcome")
+
+# class Schild(Child):
+
+#    def Hello(self):
+#       print("Hello")
+
+# name=input("Enter your name: ")
+# age=int(input(f"Hello {name} enter your age: "))
+
+# Multiherit=Schild(name,age)
+# Multiherit.Hello()
+# Multiherit.Welcome()
+# Multiherit.Name()
+# Multiherit.Age()
+         
+# import getpass
+# username=getpass.getuser()
+# print(username)
        
-    
-    
-    
+# class Student:
 
+#     def Name(self):
+#         print(f"Enter your Name: ")
 
+# class detail:
+
+#     def Age(self):
+#         print(f"Enter your Age")
+
+# class Mark:
+
+#     def MarkT(self):
+#         print(f"Enter your marks ")
+
+# class wholedet(Student,detail,Mark):
+#     pass
+
+# obj=wholedet()
+# obj.Name()
+# obj.Age()
+# obj.MarkT()
+        
+# def Sum(a,b=0,c=0):
+#    return a+b+c
+
+# print(Sum(4,5))    
+# print(Sum(4,5,1))    
+
+# def Tot(*args):
+#     ans=0
+#     for i in args:
+#         ans+=i
+#     return ans
+
+def Sum(*args):
+   ans=0
+   for i in args:
+      ans+=i
+   return ans
+
+Totv=[]
+while True:    
+    
+   Numb=int(input("Enter the Number to add: "))
+    
+   if Numb ==0:
+      break
+   
+   Totv.append(Numb)
+
+obj=Sum(*Totv)
+print(obj)
+   
+        
+
+        
+        
+    
+    
 
