@@ -29,18 +29,18 @@
 # myGrade.Grade()
 # myGrade
 
-from Learning import SickOrNo
+# from Learning import SickOrNo
 
-class SickinDtls(SickOrNo):
-    def __init__(self,pname,Temp,Bdypn,CouCol):
-        super().__init__(pname,Temp,Bdypn,CouCol)
+# class SickinDtls(SickOrNo):
+#     def __init__(self,pname,Temp,Bdypn,CouCol):
+#         super().__init__(pname,Temp,Bdypn,CouCol)
 
-pname=input("Enter your Name: ")
-Temp=int(input("Enter your current body temperature: "))
-Bdypn=input("Do you have body pain Y/N: ")
-CouCol=input("Do you have cough or cold Y/N: ")
+# pname=input("Enter your Name: ")
+# Temp=int(input("Enter your current body temperature: "))
+# Bdypn=input("Do you have body pain Y/N: ")
+# CouCol=input("Do you have cough or cold Y/N: ")
 
-Sick=SickinDtls(pname,Temp,Bdypn,CouCol)
-Sick.DispDetls()
-Sick.SickRslt()
-Sick
+# Sick=SickinDtls(pname,Temp,Bdypn,CouCol)
+# Sick.DispDetls()
+# Sick.SickRslt()
+# Sick

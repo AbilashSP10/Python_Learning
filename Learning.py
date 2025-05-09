@@ -539,26 +539,93 @@
 #         ans+=i
 #     return ans
 
-def Sum(*args):
-   ans=0
-   for i in args:
-      ans+=i
-   return ans
+# def Sum(*args):
+#    ans=0
+#    for i in args:
+#       ans+=i
+#    return ans
 
-Totv=[]
-while True:    
+# Totv=[]
+# while True:    
     
-   Numb=int(input("Enter the Number to add: "))
+#    Numb=int(input("Enter the Number to add: "))
     
-   if Numb ==0:
+#    if Numb ==0:
+#       break
+   
+#    Totv.append(Numb)
+
+# obj=Sum(*Totv)
+# print(obj)
+   
+# def SuperMarket(*args):
+    
+   # for i in args:
+      # print(i)
+   # return i
+
+TotUser=[]
+UserItems={}
+
+while True:
+    
+   UserM=input("\nEnter the User Name: ")
+
+   if UserM=='stop' or UserM=='Stop' or UserM=='STOP':
       break
-   
-   Totv.append(Numb)
+   TotUser.append(UserM)
 
-obj=Sum(*Totv)
-print(obj)
+   ItemC=[]
+
+   while True:
+
+      Items=input("Enter the Items purchased by the User: ")   
+
+      if Items=='Nil':
+         break
+
+      ItemC.append(Items)
    
-        
+      # print(ItemC)
+   # TotUser.append(UserM)
+   UserItems.append(UserM)
+   UserItems[UserM]=ItemC
+
+   for user,Items in UserItems:
+      print(f"user: {user} and item is {" , ".join(Items)}")
+
+
+   # UserItems.append(ItemC)
+   
+   # for i in TotUser:
+   #    print(f"User: {i}")
+
+   
+   
+      # for j in ItemC:
+      #    print(j, end=",")
+   
+   # while True:
+
+   #    if Items=='stop' or UserM=='Stop' or UserM=='STOP':
+   #       break
+   
+
+   for j in ItemC:      
+      print(j, end=", ")      
+
+      
+
+   
+
+
+
+
+# print(TotUser)
+    
+   # obj=SuperMarket(UserM)
+   
+            
 
         
         
