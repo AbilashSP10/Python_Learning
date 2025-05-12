@@ -564,57 +564,156 @@
       # print(i)
    # return i
 
-TotUser=[]
-UserItems={}
+# TotUser=[]
+# UserItems={}
 
-while True:
+# while True:
     
-   UserM=input("\nEnter the User Name: ")
+#    UserM=input("\nEnter the User Name: ")
 
-   if UserM=='stop' or UserM=='Stop' or UserM=='STOP':
-      break
-   TotUser.append(UserM)
+#    if UserM=='stop' or UserM=='Stop' or UserM=='STOP':
+#       break
+#    TotUser.append(UserM)
 
-   ItemC=[]
+#    ItemC=[]
 
-   while True:
+#    while True:
 
-      Items=input("Enter the Items purchased by the User: ")   
+#       Items=input("Enter the Items purchased by the User: ")   
 
-      if Items=='Nil':
-         break
+#       if Items=='Nil':
+#          break
 
-      ItemC.append(Items)
+#       ItemC.append(Items)
    
-      # print(ItemC)
-   # TotUser.append(UserM)
-   UserItems.append(UserM)
-   UserItems[UserM]=ItemC
+#       # print(ItemC)
+#    # TotUser.append(UserM)
+#    UserItems.append(UserM)
+#    UserItems[UserM]=ItemC
 
-   for user,Items in UserItems:
-      print(f"user: {user} and item is {" , ".join(Items)}")
+#    for user,Items in UserItems:
+#       print(f"user: {user} and item is {" , ".join(Items)}")
 
 
-   # UserItems.append(ItemC)
+#    # UserItems.append(ItemC)
    
-   # for i in TotUser:
-   #    print(f"User: {i}")
+#    # for i in TotUser:
+#    #    print(f"User: {i}")
 
    
    
-      # for j in ItemC:
-      #    print(j, end=",")
+   #    # for j in ItemC:
+   #    #    print(j, end=",")
    
-   # while True:
+   # # while True:
 
-   #    if Items=='stop' or UserM=='Stop' or UserM=='STOP':
-   #       break
+   # #    if Items=='stop' or UserM=='Stop' or UserM=='STOP':
+   # #       break
    
 
-   for j in ItemC:      
-      print(j, end=", ")      
+   # for j in ItemC:      
+   #    print(j, end=", ")      
 
-      
+# class Details:
+    
+#    def __init__(self,sname,age):
+#       self.age=age
+#       self.sname=sname
+
+#    def Name(self):
+#       print(f"Your Name is {self.sname}")
+   
+#    def Aged(self):
+#       print(f"Your age is {self.age}")
+
+# class child(Details):
+   
+#    # def __init__(self,sname,age):
+#    #    super().__init__(sname,age)
+   
+#    def Name(self):
+#       print(f"{self.sname} you are welcome")
+
+
+
+# sname=input("Enter your name: ")
+# age=int(input("Enter your age: "))
+
+# obj=child(sname, age)
+# obj.Name()
+# obj
+
+
+# class Demo:
+#    def __init__(self,sname,sage):
+#       self.sname=sname
+#       self.sage=sage
+        
+#    def display(self):
+#       print(f"{self.sname}")
+#       print(f"{self.sage}")
+
+# obj=Demo('Abilash', 32)
+# print(obj.sname)
+
+# class Demo:
+#    def __init__(self,sname,sage):
+#       self.sname=sname
+#       self.sage=sage
+        
+#    def _display(self):
+#       print(f"{self.sname}")
+#       print(f"{self.sage}")
+
+# obj=Demo('Abilash', 32)
+# obj._display()
+
+# class Demo:
+#    def __init__(self,sname,sage):
+#       self.__sname=sname
+#       self.sage=sage
+        
+#    def __display(self):
+#       print(f"{self.__sname}")
+#       print(f"{self.sage}")
+
+#    #Getters
+
+#    def Pdisplay(self):
+#       print(f"Your name is {self.__sname}")
+#       self.__display()
+
+# obj=Demo('Abilash', 32)
+# obj.Pdisplay()
+
+class Demo:
+   def __init__(self,sname,sage):
+      self.__sname=sname
+      self.sage=sage
+        
+   def __display(self):
+      print(f"{self.__sname}")
+      print(f"{self.sage}")
+
+   #Getters
+
+   def Pdisplay(self):
+      print(f"Your name is {self.__sname}")
+      self.__display()
+
+   #setters
+
+   def hello(self,pname):
+      self.__sname=pname
+
+      print(self.__sname)
+
+obj=Demo('Abilash', 32)
+obj.Pdisplay()
+obj.hello('Sun')
+
+   
+              
 
    
 
