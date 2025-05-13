@@ -686,33 +686,37 @@
 # obj=Demo('Abilash', 32)
 # obj.Pdisplay()
 
-class Demo:
-   def __init__(self,sname,sage):
-      self.__sname=sname
-      self.sage=sage
+# class Demo:
+#    def __init__(self,sname,sage):
+#       self.__sname=sname
+#       self.sage=sage
         
-   def __display(self):
-      print(f"{self.__sname}")
-      print(f"{self.sage}")
+#    def __display(self):
+#       print(f"{self.__sname}")
+#       print(f"{self.sage}")
 
-   #Getters
+#    #Getters
 
-   def Pdisplay(self):
-      print(f"Your name is {self.__sname}")
-      self.__display()
+#    def Pdisplay(self):
+#       print(f"Your name is {self.__sname}")
+#       self.__display()
 
-   #setters
+#    #setters
 
-   def hello(self,pname):
-      self.__sname=pname
+#    def hello(self,pname):
+#       self.__sname=pname
 
-      print(self.__sname)
+#       print(self.__sname)
 
-obj=Demo('Abilash', 32)
-obj.Pdisplay()
-obj.hello('Sun')
+# obj=Demo('Abilash', 32)
+# obj.Pdisplay()
+# obj.hello('Sun')
 
-   
+def add(a,b):
+    return a+b
+
+def mul(a,b):
+    return(a*b)
               
 
    
