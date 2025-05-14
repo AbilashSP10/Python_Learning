@@ -712,21 +712,56 @@
 # obj.Pdisplay()
 # obj.hello('Sun')
 
-def add(a,b):
-    return a+b
+# def add(a,b):
+#     return a+b
 
-def mul(a,b):
-    return(a*b)
-              
-
-   
-
-
-
+# def mul(a,b):
+#     return(a*b)
 
 # print(TotUser)
     
    # obj=SuperMarket(UserM)
+              
+from datetime import datetime, timedelta
+# # import datetime
+
+# print("Local version of date and time: ", datetime.now().strftime("%c"))
+# print("Day number of the year: ", datetime.now().strftime("%j"))
+# print(datetime.now().strftime("%Y"))
+
+# def Rdays():
+   
+#    Year=datetime.now().strftime("%Y")
+#    RemDays=datetime.now().strftime("%j")
+
+#    if int(Year)%4==0:
+#       R1=366-int(RemDays)
+#       print(f"Current no of days passed is {RemDays} and Remaining days of the year are {R1}")
+
+#    else:
+#       R2=365-int(RemDays)
+#       print(f"Current no of days passed is {RemDays} and Remaining days of the year are {R2}")
+        
+
+# obj=Rdays()
+# obj
+   
+
+# R1=datetime.now().strftime("%d")
+# R2=int(R1)-1
+
+# print(f"Yesterday: {datetime.now().strftime("%Y-%m")}-{R2}")
+
+today=datetime.now()
+
+yesterday = datetime.now() - timedelta(days=1)
+print("Yesterday is: ", yesterday.strftime("%Y-%m-%d"))
+
+two_days_ago = datetime.now() - timedelta(days=2)
+print("Two days ago date: ", two_days_ago.strftime("%Y-%m-%d"))
+
+
+
    
             
 
