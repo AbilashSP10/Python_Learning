@@ -752,21 +752,78 @@ from datetime import datetime, timedelta
 
 # print(f"Yesterday: {datetime.now().strftime("%Y-%m")}-{R2}")
 
-today=datetime.now()
+# today=datetime.now()
 
-yesterday = datetime.now() - timedelta(days=1)
-print("Yesterday is: ", yesterday.strftime("%Y-%m-%d"))
+# yesterday = datetime.now() - timedelta(days=1)
+# print("Yesterday is: ", yesterday.strftime("%Y-%m-%d"))
 
-two_days_ago = datetime.now() - timedelta(days=2)
-print("Two days ago date: ", two_days_ago.strftime("%Y-%m-%d"))
+# two_days_ago = datetime.now() - timedelta(days=2)
+# print("Two days ago date: ", two_days_ago.strftime("%Y-%m-%d"))
 
+# from random import random
 
+# import random
 
+# print(random.random())
+
+# print(random.randint(1000,9999))
+
+# Choice=["Pen", "Pencil", "Bottle", "Ink", "Bag"]
+
+# print(random.choices(Choice))
+
+# V1=random.randint(100000, 999999)
+
+# print(V1)
+
+# U1=input("Enter the OTP: ")
+
+# if V1==int(U1):
+#     print("OTP validated successfully")
+
+# else:
+#     print("OTP validation failed")
    
             
+# try:
+#     a=int(input("Enter the first number: "))
+#     b=int(input("Enter the second number: "))
 
+#     x=a/b
+
+#     print(x)
+
+# except Exception as error:
+    
+#     print("The error is: ", error)
+
+# finally:
+    
+#     print("Completed")
         
-        
+
+try:
+    a=int(input("Enter the first number: "))
+    b=int(input("Enter the second number: "))
+
+    x=a/b
+
+    print(x)
+
+except ZeroDivisionError:
+    print("Number is not divisible by Zero")
+
+except ValueError:
+    print("Your enter not a number")
+
+except Exception as error:
+    
+    print("The error is: ", error)
+
+finally:
+    
+    print("Completed")
+                
     
     
 
