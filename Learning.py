@@ -802,28 +802,87 @@ from datetime import datetime, timedelta
 #     print("Completed")
         
 
-try:
-    a=int(input("Enter the first number: "))
-    b=int(input("Enter the second number: "))
+# try:
+#     a=int(input("Enter the first number: "))
+#     b=int(input("Enter the second number: "))
 
-    x=a/b
+#     x=a/b
 
-    print(x)
+#     print(x)
 
-except ZeroDivisionError:
-    print("Number is not divisible by Zero")
+# except ZeroDivisionError:
+#     print("Number is not divisible by Zero")
 
-except ValueError:
-    print("Your enter not a number")
+# except ValueError:
+#     print("Your entered not a number")
 
-except Exception as error:
+# except Exception as error:
     
-    print("The error is: ", error)
+#     print("The error is: ", error)
 
-finally:
+# finally:
     
-    print("Completed")
+#     print("Completed")
                 
     
-    
+# Filenew=open("inheritance.py", "r")
 
+# print(Filenew.read())
+
+# Filenew.close()
+
+# hi=open("demo.csv", "r")
+
+# print(hi.read())
+
+# hi.seek(0)
+
+# print(hi.readline())
+
+# hi.seek(0)
+
+# for i in hi.readlines():
+#     print(i)
+
+# hi.close()
+
+# hi=open("demo.csv", "r+")
+
+# print(hi.read())
+
+# print(hi.write("hello\n"))
+
+# InsText=["Hi\n", "hello\n", "and\n", "welcome\n", "to\n", "Python\n", "Learning\n"]
+
+# hi.writelines(InsText)
+
+# hi.close()
+
+# hello=open("abilash.csv", "w+")
+
+# hello.write("New Document\n")
+
+# InsText=["Hi\n", "hello\n", "and\n", "welcome\n", "to\n", "Python\n", "Learning\n"]
+
+# hello.writelines(InsText)
+
+# hello.seek(0)
+
+# print(hello.read())
+
+# print(hello.readable())
+# print(hello.writable())
+
+
+# hello.close()
+
+
+hello=open("abilash.csv", "a+")
+
+hello.write("Append1\n")
+
+print(hello.readable())
+
+print(hello.writable())
+
+hello.close()
