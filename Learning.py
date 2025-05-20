@@ -722,7 +722,7 @@
     
    # obj=SuperMarket(UserM)
               
-from datetime import datetime, timedelta
+# from datetime import datetime, timedelta
 # # import datetime
 
 # print("Local version of date and time: ", datetime.now().strftime("%c"))
@@ -877,12 +877,76 @@ from datetime import datetime, timedelta
 # hello.close()
 
 
-hello=open("abilash.csv", "a+")
+# hello=open("abilash.csv", "a")
 
-hello.write("Append1\n")
+# hello.write("Append1\n")
 
-print(hello.readable())
+# print(hello.readable())
 
-print(hello.writable())
+# print(hello.writable())
 
-hello.close()
+# hello.close()
+
+
+# FileNew=open("Task.csv", "a+")
+
+# FileNew.write("New File created\n")
+
+# FileNew.seek(0)
+# print(FileNew.read())
+
+# FileNew.write("Appending Hello\n")
+
+# FileNew.seek(0)
+# print(FileNew.read())
+
+# FileNew.close()
+
+import os
+
+# print(dir(os))
+
+# print(os.getcwd())
+
+# print(os.listdir())
+
+# for i in os.listdir():
+#     print(i)
+
+# os.chdir("C:\\Users\\Abilash SP\\Documents")
+
+# print(os.getcwd())
+
+# print(os.listdir("."))
+
+# os.chdir("D:\\learning\\Git_Main\\python_learning")
+
+# print(os.listdir())
+# print(os.getcwd())
+
+# os.chdir("C:\\Users\\Abilash SP\\Documents")
+
+# os.makedirs("Test1")
+
+# os.removedirs("Test1")
+
+# os.chdir("D:\\learning\\Git_Main\\python_learning")
+
+# print(os.getcwd())
+
+# print(open("test.txt", "a+"))
+
+# os.remove("test.txt")
+
+File=input("Enter the filename: ")
+
+if os.path.exists(File):
+    
+    print("File exists")
+
+else:
+    fp=open(File,"w")
+    fp.write("Hello\n")
+    fp.write("World\n")
+    fp.write("Python\n")
+    fp.close()

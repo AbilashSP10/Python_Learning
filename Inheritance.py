@@ -45,8 +45,8 @@
 # Sick.SickRslt()
 # Sick
 
-from Learning import add,mul
+# from Learning import add,mul
 
-print(add(5,5))
+# print(add(5,5))
 
-print(mul(5,5))
+# print(mul(5,5))
