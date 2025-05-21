@@ -902,7 +902,7 @@
 
 # FileNew.close()
 
-import os
+# import os
 
 # print(dir(os))
 
@@ -938,15 +938,59 @@ import os
 
 # os.remove("test.txt")
 
-File=input("Enter the filename: ")
+# File=input("Enter the filename: ")
 
-if os.path.exists(File):
+# if os.path.exists(File):
     
-    print("File exists")
+#     print("File exists")
 
-else:
-    fp=open(File,"w")
-    fp.write("Hello\n")
-    fp.write("World\n")
-    fp.write("Python\n")
-    fp.close()
+# else:
+#     fp=open(File,"w")
+#     fp.write("Hello\n")
+#     fp.write("World\n")
+#     fp.write("Python\n")
+#     fp.close()
+
+# import csv
+
+# # with open("abilash.csv", "r") as files:
+# #     read_content=csv.reader(files)
+# #     print(read_content)
+
+# #     for i in read_content:
+# #         print(i)
+
+# with open("abilash.csv", "r") as files:
+#     read_content=csv.reader(files)
+
+#     print(next(read_content))
+#     print(next(read_content))
+#     print(next(read_content,"End"))
+#     print(read_content)
+
+#     for x in read_content:
+#         print(x)
+
+# import tkinter
+
+# window=tkinter.Tk()
+# window.title("First GUI")
+# label=tkinter.Label(window,text="WELCOME TO MY FIRST GUI")
+# label.pack()
+# window.mainloop()
+
+import tkinter as tk
+
+def button_click():
+    label.config(text="Button Clicked!")
+
+window = tk.Tk()
+window.title("Simple Tkinter App")
+
+label = tk.Label(window, text="Hello, Tkinter!")
+label.pack()
+
+button = tk.Button(window, text="Click Me", command=button_click)
+button.pack()
+
+window.mainloop()
