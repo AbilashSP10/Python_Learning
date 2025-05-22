@@ -975,22 +975,66 @@
 
 # window=tkinter.Tk()
 # window.title("First GUI")
-# label=tkinter.Label(window,text="WELCOME TO MY FIRST GUI")
+# label=tkinter.Label(window,text="WELCOME TO MY FIRST GUI",font=("Arial", 24), fg="green", bg="white")
 # label.pack()
+# window.geometry("600x600")
+
+# x=tkinter.Button(window,text="Click me if you want X", font=("Comic Sans MS", 10), fg="white", bg="red", command=lambda: print("You have clicked X"), padx=10,pady=10)
+# x.pack()
+
+# y=tkinter.Button(window,text="Click me if you want Y", font=("Comic Sans MS", 10), fg="white", bg="blue", command=lambda: print("You have clicked Y"),padx=10,pady=10)
+# y.pack()
+
 # window.mainloop()
 
 import tkinter as tk
 
-def button_click():
-    label.config(text="Button Clicked!")
+# window=tk.Tk()
+# window.title("Function Check")
 
-window = tk.Tk()
-window.title("Simple Tkinter App")
+# label=tk.Label(window,text="Display on the Interface", font=("Cambria", 20), fg="white", bg="green")
+# label.pack()
+# window.geometry("400x400")
 
-label = tk.Label(window, text="Hello, Tkinter!")
+# def MyName():
+#    label.config(text="Abilash", font=("Comic Sans MS", 20))
+
+# def DefaultName():
+#    label.config(text="Have a Nice Day!", font=("Comic Sans MS", 20))
+
+# x=tk.Button(window,text="Click me to display my Name", font=("Comic Sans MS", 10), fg="white", bg="red", command=MyName)
+# x.pack()
+
+# y=tk.Button(window,text="Click for some text", font=("Comic Sans MS", 10), fg="white", bg="blue", command=DefaultName)
+# y.pack()
+
+# window.mainloop()
+
+window=tk.Tk()
+window.title("New Window Check")
+
+label=tk.Label(window,text="Hello to Program", font=("Cambria", 20), fg="white", bg="green")
 label.pack()
+window.geometry("400x400")
 
-button = tk.Button(window, text="Click Me", command=button_click)
-button.pack()
+def MyName():
+   Window1=tk.Tk()
+   Window1.title("Welcome to Window one")
+   label1=tk.Label(Window1,text="Hello to Window1").pack()
+   Window1.geometry("400x400")
+   
+
+def DefaultName():
+   Window2=tk.Tk()
+   Window2.title("New Window Two")
+   label2=tk.Label(Window2,text="Hello to Window2").pack()
+   Window2.geometry("200x200")
+   
+
+x=tk.Button(window,text="Window One", font=("Comic Sans MS", 10), fg="white", bg="red", command=MyName)
+x.pack()
+
+y=tk.Button(window,text="Window Two", font=("Comic Sans MS", 10), fg="white", bg="blue", command=DefaultName)
+y.pack()
 
 window.mainloop()
