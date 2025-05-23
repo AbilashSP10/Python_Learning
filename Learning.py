@@ -1010,31 +1010,56 @@ import tkinter as tk
 
 # window.mainloop()
 
+# window=tk.Tk()
+# window.title("New Window Check")
+
+# label=tk.Label(window,text="Hello to Program", font=("Cambria", 20), fg="white", bg="green")
+# label.pack()
+# window.geometry("400x400")
+
+# def MyName():
+#    Window1=tk.Tk()
+#    Window1.title("Welcome to Window one")
+#    label1=tk.Label(Window1,text="Hello to Window1").pack()
+#    Window1.geometry("400x400")
+   
+
+# def DefaultName():
+#    Window2=tk.Tk()
+#    Window2.title("New Window Two")
+#    label2=tk.Label(Window2,text="Hello to Window2").pack()
+#    Window2.geometry("400x400")
+   
+# # Button to appear at the bottom use frame
+
+# button_frame = tk.Frame(window)
+# button_frame.pack(side='bottom', pady=10)
+
+# x=tk.Button(button_frame,text="Window One", font=("Comic Sans MS", 10), fg="red", bg="black", padx=10, pady=10, command=MyName)
+# x.pack(padx=(30), pady=(20,30),side=tk.LEFT)
+
+# y=tk.Button(button_frame,text="Window Two", font=("Comic Sans MS", 10), fg="blue", bg="yellow", padx=10, pady=10, command=DefaultName)
+# y.pack(padx=(30), pady=(20,30),side=tk.BOTTOM)
+
+
+
+# window.mainloop()
+
+from tkinter import *
+
 window=tk.Tk()
-window.title("New Window Check")
+window.title("My First Tkinter App!")
 
-label=tk.Label(window,text="Hello to Program", font=("Cambria", 20), fg="white", bg="green")
-label.pack()
-window.geometry("400x400")
+w=Canvas(window,width=600,height=600)
+w.pack()
+w.create_line(2,0,2,300, fill="red")
+w.create_line(0,2,300,2, fill="red")
+w.create_line(300,300,0,300, fill="red")
+w.create_line(300,300,300,0, fill="red")
 
-def MyName():
-   Window1=tk.Tk()
-   Window1.title("Welcome to Window one")
-   label1=tk.Label(Window1,text="Hello to Window1").pack()
-   Window1.geometry("400x400")
-   
+w.create_line(0,0,300,300, fill="red")
+w.create_line(300,0,0,300, fill="red")
 
-def DefaultName():
-   Window2=tk.Tk()
-   Window2.title("New Window Two")
-   label2=tk.Label(Window2,text="Hello to Window2").pack()
-   Window2.geometry("200x200")
-   
-
-x=tk.Button(window,text="Window One", font=("Comic Sans MS", 10), fg="white", bg="red", command=MyName)
-x.pack()
-
-y=tk.Button(window,text="Window Two", font=("Comic Sans MS", 10), fg="white", bg="blue", command=DefaultName)
-y.pack()
+# w.create_rectangle(100,100,200,200, fill="green")
 
 window.mainloop()
