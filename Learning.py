@@ -1060,6 +1060,21 @@ w.create_line(300,300,300,0, fill="red")
 w.create_line(0,0,300,300, fill="red")
 w.create_line(300,0,0,300, fill="red")
 
+# w.create_oval(100,100,300,300, fill="red")
+w.create_rectangle(0,100,200,300,fill="yellow",outline="red")
+w.create_polygon(0,300, 300,300, 300,0, fill="blue",outline="red")
+w.create_polygon(0,0, 300,300, 300,0, fill="green",outline="red")
+
 # w.create_rectangle(100,100,200,200, fill="green")
 
+# button = tk.Button(w, text="Click Me")
+
+# w.create_window(150, 100, window=button)
+
+w.create_arc(0,100,200,300,fill="magenta",outline="white")
+w.create_arc(0,100,200,300, start=0, extent=50, fill="white",outline="white")
+
+
 window.mainloop()
+
+
