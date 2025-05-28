@@ -1047,34 +1047,122 @@ import tkinter as tk
 
 from tkinter import *
 
+# window=tk.Tk()
+# window.title("My First Tkinter App!")
+
+# w=Canvas(window,width=600,height=600)
+# w.pack()
+# w.create_line(2,0,2,300, fill="red")
+# w.create_line(0,2,300,2, fill="red")
+# w.create_line(300,300,0,300, fill="red")
+# w.create_line(300,300,300,0, fill="red")
+
+# w.create_line(0,0,300,300, fill="red")
+# w.create_line(300,0,0,300, fill="red")
+
+# # w.create_oval(100,100,300,300, fill="red")
+# w.create_rectangle(0,100,200,300,fill="yellow",outline="red")
+# w.create_polygon(0,300, 300,300, 300,0, fill="blue",outline="red")
+# w.create_polygon(0,0, 300,300, 300,0, fill="green",outline="red")
+
+# # w.create_rectangle(100,100,200,200, fill="green")
+
+# # button = tk.Button(w, text="Click Me")
+
+# # w.create_window(150, 100, window=button)
+
+# w.create_arc(0,100,200,300,fill="magenta",outline="white")
+# w.create_arc(0,100,200,300, start=0, extent=50, fill="white",outline="white")
+
+
+
+# window.mainloop()
+
+# window=tk.Tk()
+# window.title=("Calculator")
+# window.geometry("600x600")
+    
+
+# w=Canvas(window, width=600)
+# w.pack()
+
+# UsInp=tk.Entry(w,width=100,font=("Arial", 12),border=5).pack(ipady=20,padx=(150),pady=(20,0),side=tk.TOP)
+
+
+
+# button1=tk.Button(w,text="1")
+# w.create_window(150,200, window=button1)
+# button1.pack(ipadx=5,ipady=5,padx=(150), pady=(20,100),side=tk.LEFT)
+
+# button2=tk.Button(w,text="2")
+# w.create_window(150,100, window=button2)
+# button2.pack(ipadx=5,ipady=5, padx=(10), pady=(20,100),side=tk.LEFT)
+
+
+
+# window.mainloop()
+
+import tkinter as tk
+
 window=tk.Tk()
-window.title("My First Tkinter App!")
+window.title("Calculate")
+window.geometry("600x600")
 
-w=Canvas(window,width=600,height=600)
-w.pack()
-w.create_line(2,0,2,300, fill="red")
-w.create_line(0,2,300,2, fill="red")
-w.create_line(300,300,0,300, fill="red")
-w.create_line(300,300,300,0, fill="red")
+def add():
+   try:
+      Num1=float(entry1.get())
+      Num2=float(entry2.get())
+      res_label.config(text=f"Result: {Num1 + Num2}")
+    
+   except ValueError:
+      res_label.config(text="Enter Valid Numbers")
 
-w.create_line(0,0,300,300, fill="red")
-w.create_line(300,0,0,300, fill="red")
+def sub():
+   try:
+      Num1=float(entry1.get())
+      Num2=float(entry2.get())
+      res_label.config(text=f"Result: {Num1 - Num2}")
 
-# w.create_oval(100,100,300,300, fill="red")
-w.create_rectangle(0,100,200,300,fill="yellow",outline="red")
-w.create_polygon(0,300, 300,300, 300,0, fill="blue",outline="red")
-w.create_polygon(0,0, 300,300, 300,0, fill="green",outline="red")
+   except ValueError:
+      res_label.config(text="Enter Valid Numbers")
 
-# w.create_rectangle(100,100,200,200, fill="green")
+def mul():
+   try:
+      Num1=float(entry1.get())
+      Num2=float(entry2.get())
+      res_label.config(text=f"Result: {Num1 * Num2}")
 
-# button = tk.Button(w, text="Click Me")
+   except ValueError:
+      res_label.config(text="Enter Valid Numbers")
 
-# w.create_window(150, 100, window=button)
+def div():
+   try:
+      Num1=float(entry1.get())
+      Num2=float(entry2.get())
+      res_label.config(text=f"Result: {Num1 / Num2}")
 
-w.create_arc(0,100,200,300,fill="magenta",outline="white")
-w.create_arc(0,100,200,300, start=0, extent=50, fill="white",outline="white")
+   except ValueError:
+      res_label.config(text="Enter Valid Numbers")            
 
+
+entry1=tk.Entry(window,border=2)
+entry1.pack(ipadx=120,ipady=10,pady=20)
+
+entry2=tk.Entry(window,border=2)
+entry2.pack(ipadx=120,ipady=10,pady=5)
+
+button_frame = tk.Frame(window)
+button_frame.pack(side='top', pady=10)
+
+
+
+B1=tk.Button(button_frame,text="+",font=("Arial",15),background="orange",fg="white",command=add).pack(ipadx=2,ipady=2,padx=5,side=tk.LEFT)
+B2=tk.Button(button_frame,text="-",font=("Arial",15),background="orange",fg="white",command=sub).pack(ipadx=5,ipady=2,padx=5,side=tk.LEFT)
+B3=tk.Button(button_frame,text="*",font=("Arial",15),background="orange",fg="white",command=mul).pack(ipadx=5,ipady=2,padx=5,side=tk.LEFT)
+B4=tk.Button(button_frame,text="/",font=("Arial",15),background="orange",fg="white",command=div).pack(ipadx=5,ipady=2,padx=5,side=tk.LEFT)
+
+res_label=tk.Label(window, text="Result: ",font=("Arial",20))
+res_label.pack(side=tk.TOP)
 
 window.mainloop()
-
 
