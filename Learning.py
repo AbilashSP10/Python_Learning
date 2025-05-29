@@ -1104,65 +1104,180 @@ from tkinter import *
 
 import tkinter as tk
 
-window=tk.Tk()
-window.title("Calculate")
-window.geometry("600x600")
+# window=tk.Tk()
+# window.title("Calculate")
+# window.geometry("600x600")
 
-def add():
-   try:
-      Num1=float(entry1.get())
-      Num2=float(entry2.get())
-      res_label.config(text=f"Result: {Num1 + Num2}")
+# def add():
+#    try:
+#       Num1=float(entry1.get())
+#       Num2=float(entry2.get())
+#       res_label.config(text=f"Result: {Num1 + Num2}")
     
-   except ValueError:
-      res_label.config(text="Enter Valid Numbers")
+#    except ValueError:
+#       res_label.config(text="Enter Valid Numbers")
 
-def sub():
-   try:
-      Num1=float(entry1.get())
-      Num2=float(entry2.get())
-      res_label.config(text=f"Result: {Num1 - Num2}")
+# def sub():
+#    try:
+#       Num1=float(entry1.get())
+#       Num2=float(entry2.get())
+#       res_label.config(text=f"Result: {Num1 - Num2}")
 
-   except ValueError:
-      res_label.config(text="Enter Valid Numbers")
+#    except ValueError:
+#       res_label.config(text="Enter Valid Numbers")
 
-def mul():
-   try:
-      Num1=float(entry1.get())
-      Num2=float(entry2.get())
-      res_label.config(text=f"Result: {Num1 * Num2}")
+# def mul():
+#    try:
+#       Num1=float(entry1.get())
+#       Num2=float(entry2.get())
+#       res_label.config(text=f"Result: {Num1 * Num2}")
 
-   except ValueError:
-      res_label.config(text="Enter Valid Numbers")
+#    except ValueError:
+#       res_label.config(text="Enter Valid Numbers")
 
-def div():
-   try:
-      Num1=float(entry1.get())
-      Num2=float(entry2.get())
-      res_label.config(text=f"Result: {Num1 / Num2}")
+# def div():
+#    try:
+#       Num1=float(entry1.get())
+#       Num2=float(entry2.get())
+#       res_label.config(text=f"Result: {Num1 / Num2}")
 
-   except ValueError:
-      res_label.config(text="Enter Valid Numbers")            
-
-
-entry1=tk.Entry(window,border=2)
-entry1.pack(ipadx=120,ipady=10,pady=20)
-
-entry2=tk.Entry(window,border=2)
-entry2.pack(ipadx=120,ipady=10,pady=5)
-
-button_frame = tk.Frame(window)
-button_frame.pack(side='top', pady=10)
+#    except ValueError:
+#       res_label.config(text="Enter Valid Numbers")            
 
 
+# entry1=tk.Entry(window,border=2)
+# entry1.pack(ipadx=120,ipady=10,pady=20)
 
-B1=tk.Button(button_frame,text="+",font=("Arial",15),background="orange",fg="white",command=add).pack(ipadx=2,ipady=2,padx=5,side=tk.LEFT)
-B2=tk.Button(button_frame,text="-",font=("Arial",15),background="orange",fg="white",command=sub).pack(ipadx=5,ipady=2,padx=5,side=tk.LEFT)
-B3=tk.Button(button_frame,text="*",font=("Arial",15),background="orange",fg="white",command=mul).pack(ipadx=5,ipady=2,padx=5,side=tk.LEFT)
-B4=tk.Button(button_frame,text="/",font=("Arial",15),background="orange",fg="white",command=div).pack(ipadx=5,ipady=2,padx=5,side=tk.LEFT)
+# entry2=tk.Entry(window,border=2)
+# entry2.pack(ipadx=120,ipady=10,pady=5)
 
-res_label=tk.Label(window, text="Result: ",font=("Arial",20))
-res_label.pack(side=tk.TOP)
+# button_frame = tk.Frame(window)
+# button_frame.pack(side='top', pady=10)
 
-window.mainloop()
 
+
+# B1=tk.Button(button_frame,text="+",font=("Arial",15),background="orange",fg="white",command=add).pack(ipadx=2,ipady=2,padx=5,side=tk.LEFT)
+# B2=tk.Button(button_frame,text="-",font=("Arial",15),background="orange",fg="white",command=sub).pack(ipadx=5,ipady=2,padx=5,side=tk.LEFT)
+# B3=tk.Button(button_frame,text="*",font=("Arial",15),background="orange",fg="white",command=mul).pack(ipadx=5,ipady=2,padx=5,side=tk.LEFT)
+# B4=tk.Button(button_frame,text="/",font=("Arial",15),background="orange",fg="white",command=div).pack(ipadx=5,ipady=2,padx=5,side=tk.LEFT)
+
+# res_label=tk.Label(window, text="Result: ",font=("Arial",20))
+# res_label.pack(side=tk.TOP)
+
+# window.mainloop()
+
+# window=tk.Tk()
+# window.title("Calculator")
+
+# entry=tk.Entry(window,width=25,border=4,background="ivory",foreground="red",font=("Comic Sans MS", 12))
+# entry.pack(ipady=10,pady=10)
+
+# window.geometry("300x300")
+# window.configure(bg="gray")
+
+# frame1=tk.Frame(window,bg="gray")
+# frame1.pack(side="top", padx=2)
+
+# B1=tk.Button(frame1,text="1", font=("Comic Sans MS", 12), width=3, background="ivory", foreground="red", border=5, command=lambda: entry.insert(tk.END, "1")).pack(padx=5,pady=2,side=tk.LEFT)
+# B2=tk.Button(frame1,text="2", font=("Comic Sans MS", 12), width=3, background="ivory", foreground="red", border=5, command=lambda: entry.insert(tk.END, "2")).pack(padx=5,pady=2,side=tk.LEFT)
+# B3=tk.Button(frame1,text="3", font=("Comic Sans MS", 12), width=3, background="ivory", foreground="red", border=5, command=lambda: entry.insert(tk.END, "3")).pack(padx=5,pady=2,side=tk.LEFT)
+# B4=tk.Button(frame1,text="+", font=("Comic Sans MS", 12), width=3, background="ivory", foreground="red", border=5, command=lambda: entry.insert(tk.END, "+")).pack(padx=5,pady=2,side=tk.LEFT)
+
+# frame2=tk.Frame(window,bg="gray")
+# frame2.pack(side="top",padx=2,pady=2)
+
+# B5=tk.Button(frame2,text="4", font=("Comic Sans MS", 12), width=3, background="ivory", foreground="red", border=5, command=lambda: entry.insert(tk.END, "4")).pack(padx=5,pady=2,side=tk.LEFT)
+# B6=tk.Button(frame2,text="5", font=("Comic Sans MS", 12), width=3, background="ivory", foreground="red", border=5, command=lambda: entry.insert(tk.END, "5")).pack(padx=5,pady=2,side=tk.LEFT)
+# B7=tk.Button(frame2,text="6", font=("Comic Sans MS", 12), width=3, background="ivory", foreground="red", border=5, command=lambda: entry.insert(tk.END, "6")).pack(padx=5,pady=2,side=tk.LEFT)
+# B8=tk.Button(frame2,text="-", font=("Comic Sans MS", 12), width=3, background="ivory", foreground="red", border=5, command=lambda: entry.insert(tk.END, "-")).pack(padx=5,pady=2,side=tk.LEFT)
+
+# frame3=tk.Frame(window,bg="gray")
+# frame3.pack(side="top",padx=2,pady=2)
+
+# B9=tk.Button(frame3,text="7", font=("Comic Sans MS", 12), width=3, background="ivory", foreground="red", border=5, command=lambda: entry.insert(tk.END, "7")).pack(padx=5,pady=2,side=tk.LEFT)
+# B10=tk.Button(frame3,text="8", font=("Comic Sans MS", 12), width=3, background="ivory", foreground="red", border=5, command=lambda: entry.insert(tk.END, "8")).pack(padx=5,pady=2,side=tk.LEFT)
+# B11=tk.Button(frame3,text="9", font=("Comic Sans MS", 12), width=3, background="ivory", foreground="red", border=5, command=lambda: entry.insert(tk.END, "9")).pack(padx=5,pady=2,side=tk.LEFT)
+# B12=tk.Button(frame3,text="*", font=("Comic Sans MS", 12), width=3, background="ivory", foreground="red", border=5, command=lambda: entry.insert(tk.END, "*")).pack(padx=5,pady=2,side=tk.LEFT)
+
+# frame4=tk.Frame(window,bg="gray")
+# frame4.pack(side="top",padx=2,pady=2)
+
+# B13=tk.Button(frame4,text="/", font=("Comic Sans MS", 12), width=3, background="ivory", foreground="red", border=5, command=lambda: entry.insert(tk.END, "/")).pack(padx=5,side=tk.LEFT)
+# B14=tk.Button(frame4,text="%", font=("Comic Sans MS", 12), width=3, background="ivory", foreground="red", border=5, command=lambda: entry.insert(tk.END, "%")).pack(padx=5,side=tk.LEFT)
+# B15=tk.Button(frame4,text="=", font=("Comic Sans MS", 12), width=3, background="ivory", foreground="red", border=5, command=lambda: Calculate()).pack(padx=5,side=tk.LEFT)
+# B16=tk.Button(frame4,text="C", font=("Comic Sans MS", 12), width=3, background="ivory", foreground="red", border=5, command=lambda: entry.delete(0, tk.END)).pack(padx=5,side=tk.LEFT)
+
+
+# def Calculate():
+#    Expression=entry.get().strip()
+
+#    try:
+
+#       if "+" in Expression or "-" in Expression or "*" in Expression or "/" in Expression or "%" in Expression:
+#          result=eval(Expression)
+#          entry.delete(0,tk.END)
+#          entry.insert(0,result)
+
+#       else:
+#          entry.delete(0,tk.END)
+#          entry.insert(0, "Invalid")
+
+#    except Exception as e:
+#       entry.delete(0,tk.END)
+#       entry.insert(0, e)
+
+# window.mainloop()
+
+def add_to_expression(value):
+    entry.insert(tk.END, value)
+
+def clear_entry():
+    entry.delete(0, tk.END)
+
+def calculate():
+    expression = entry.get()
+    try:
+        result=eval(expression)
+        entry.delete(0, tk.END)
+        entry.insert(0, result)
+
+    except:
+        entry.delete(0, tk.END)
+        entry.insert(0, "Error")
+
+#Create main window
+root = tk.Tk()
+root.title("Mini Calculator")
+root.geometry("250x500")
+
+# Entry box
+entry = tk.Entry(root,font=("Arial", 18), justify="right", width=15, borderwidth=2, bg="ivory", relief="ridge")
+entry.pack(pady=20, padx=10, fill=tk.X)
+
+buttons = [
+    ['7', '8', '9'],
+    ['4', '5', '6'],
+    ['1', '2', '3'],
+    ['0', '+', '-'],
+    ['C', '%', '=']
+]
+
+#Create buttons
+
+for row in buttons:
+   frame = tk.Frame(root)
+   frame.pack(pady=2)
+   for btn_text in row:
+      if btn_text == 'C':
+         action = clear_entry
+      elif btn_text == '=':
+          action = calculate
+      else:
+          action = lambda value = btn_text: add_to_expression(value)
+      if btn_text in ['+', '-', '%', '=']:
+          btn = tk.Button(frame, text=btn_text, width=5, height=2, font=("Arial", 14), command=action)
+      else:
+          btn = tk.Button(frame, text=btn_text, width=5, height=2, font=("Arial", 14), command=action)
+      btn.pack(side=tk.LEFT, padx=5, pady=5)
+
+root.mainloop()
