@@ -1228,56 +1228,142 @@ import tkinter as tk
 
 # window.mainloop()
 
-def add_to_expression(value):
-    entry.insert(tk.END, value)
+# def add_to_expression(value):
+#     entry.insert(tk.END, value)
 
-def clear_entry():
-    entry.delete(0, tk.END)
+# def clear_entry():
+#     entry.delete(0, tk.END)
 
-def calculate():
-    expression = entry.get()
-    try:
-        result=eval(expression)
-        entry.delete(0, tk.END)
-        entry.insert(0, result)
+# def calculate():
+#     expression = entry.get()
+#     try:
+#         result=eval(expression)
+#         entry.delete(0, tk.END)
+#         entry.insert(0, result)
 
-    except:
-        entry.delete(0, tk.END)
-        entry.insert(0, "Error")
+#     except:
+#         entry.delete(0, tk.END)
+#         entry.insert(0, "Error")
 
-#Create main window
-root = tk.Tk()
-root.title("Mini Calculator")
-root.geometry("250x500")
+# #Create main window
+# root = tk.Tk()
+# root.title("Mini Calculator")
+# root.geometry("250x500")
 
-# Entry box
-entry = tk.Entry(root,font=("Arial", 18), justify="right", width=15, borderwidth=2, bg="ivory", relief="ridge")
-entry.pack(pady=20, padx=10, fill=tk.X)
+# # Entry box
+# entry = tk.Entry(root,font=("Arial", 18), justify="right", width=15, borderwidth=2, bg="ivory", relief="ridge")
+# entry.pack(pady=20, padx=10, fill=tk.X)
 
-buttons = [
-    ['7', '8', '9'],
-    ['4', '5', '6'],
-    ['1', '2', '3'],
-    ['0', '+', '-'],
-    ['C', '%', '=']
-]
+# buttons = [
+#     ['7', '8', '9'],
+#     ['4', '5', '6'],
+#     ['1', '2', '3'],
+#     ['0', '+', '-'],
+#     ['C', '%', '=']
+# ]
 
-#Create buttons
+# #Create buttons
 
-for row in buttons:
-   frame = tk.Frame(root)
-   frame.pack(pady=2)
-   for btn_text in row:
-      if btn_text == 'C':
-         action = clear_entry
-      elif btn_text == '=':
-          action = calculate
-      else:
-          action = lambda value = btn_text: add_to_expression(value)
-      if btn_text in ['+', '-', '%', '=']:
-          btn = tk.Button(frame, text=btn_text, width=5, height=2, font=("Arial", 14), command=action)
-      else:
-          btn = tk.Button(frame, text=btn_text, width=5, height=2, font=("Arial", 14), command=action)
-      btn.pack(side=tk.LEFT, padx=5, pady=5)
+# for row in buttons:
+#    frame = tk.Frame(root)
+#    frame.pack(pady=2)
+#    for btn_text in row:
+#       if btn_text == 'C':
+#          action = clear_entry
+#       elif btn_text == '=':
+#           action = calculate
+#       else:
+#           action = lambda value = btn_text: add_to_expression(value)
+#       if btn_text in ['+', '-', '%', '=']:
+#           btn = tk.Button(frame, text=btn_text, width=5, height=2, font=("Arial", 14), command=action)
+#       else:
+#           btn = tk.Button(frame, text=btn_text, width=5, height=2, font=("Arial", 14), command=action)
+#       btn.pack(side=tk.LEFT, padx=5, pady=5)
 
-root.mainloop()
+# root.mainloop()
+
+window=tk.Tk()
+window.title("Stop Watch")
+
+window.geometry("300x100")
+window.configure(bg="ivory")
+
+S1=0
+S2=0
+M1=0
+M2=0
+H1=0
+H2=0
+
+wat_label=tk.Label(window, text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}",font=("Arial",20))
+wat_label.pack(side=tk.TOP)
+
+def Start():
+    global S1
+    global S2
+    global M1
+    global M2
+    global H1
+    global H2
+
+    #Seconds
+
+    if S1<10:
+        S1+=1
+        # S2+=1
+        wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
+        window.after(10, Start)        
+    if S1==10:
+        S2+=1
+        S1=0
+        wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
+
+    #Minutes
+
+    if S2==6:
+        M1+=1
+        S2=0
+        wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
+    if M1==10:
+        M2+=1
+        M1=0
+        wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
+    
+    #Hours
+
+    if M2==6:
+        H1+=1
+        M2=0
+        wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
+    if H1==10:
+        H2+=1
+        H1=0
+        wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
+    
+    if H2==2 and H1==4:
+        H1=0
+        H2=0
+        wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
+        
+
+
+def Stop():
+    pass
+
+def Restart():
+    pass
+
+
+frame=tk.Frame(window,bg="gray")
+frame.pack(side="top",padx=2,pady=2)
+
+start_button = tk.Button(frame, text="Start",font=("Comic Sans MS", 12), width=3, background="ivory", foreground="red", border=5, command=Start)
+start_button.pack(ipadx=10,padx=2,side=tk.LEFT)
+
+stop_button = tk.Button(frame, text="Stop",font=("Comic Sans MS", 12), width=3, background="ivory", foreground="red", border=5, command=Stop)
+stop_button.pack(ipadx=10,padx=2,side=tk.LEFT)
+
+restart_button = tk.Button(frame, text="Restart",font=("Comic Sans MS", 12), width=3, background="ivory", foreground="red", border=5, command=Restart)
+restart_button.pack(ipadx=20,padx=2,side=tk.LEFT)
+
+window.mainloop()
