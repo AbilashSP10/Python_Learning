@@ -1102,7 +1102,7 @@ from tkinter import *
 
 # window.mainloop()
 
-import tkinter as tk
+# import tkinter as tk
 
 # window=tk.Tk()
 # window.title("Calculate")
@@ -1282,88 +1282,204 @@ import tkinter as tk
 
 # root.mainloop()
 
-window=tk.Tk()
-window.title("Stop Watch")
+######## Stop Watch ######
 
-window.geometry("300x100")
-window.configure(bg="ivory")
+# import tkinter as tk
 
-S1=0
-S2=0
-M1=0
-M2=0
-H1=0
-H2=0
+# window=tk.Tk()
+# window.title("Stop Watch")
 
-wat_label=tk.Label(window, text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}",font=("Arial",20))
-wat_label.pack(side=tk.TOP)
+# window.geometry("300x100")
+# window.configure(bg="ivory")
 
-def Start():
-    global S1
-    global S2
-    global M1
-    global M2
-    global H1
-    global H2
+# S1=0
+# S2=0
+# M1=0
+# M2=0
+# H1=0
+# H2=0
 
-    #Seconds
+# wat_label=tk.Label(window, text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}",font=("Arial",20))
+# wat_label.pack(side=tk.TOP)
 
-    if S1<10:
-        S1+=1
-        # S2+=1
-        wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
-        window.after(10, Start)        
-    if S1==10:
-        S2+=1
-        S1=0
-        wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
+# def Start():
+#     global S1
+#     global S2
+#     global M1
+#     global M2
+#     global H1
+#     global H2
 
-    #Minutes
+#     #Seconds
 
-    if S2==6:
-        M1+=1
-        S2=0
-        wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
-    if M1==10:
-        M2+=1
-        M1=0
-        wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
+#     if S1<10:
+#         S1+=1
+#         # S2+=1
+#         wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
+#         window.after(10, Start)        
+#     if S1==10:
+#         S2+=1
+#         S1=0
+#         wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
+
+#     #Minutes
+
+#     if S2==6:
+#         M1+=1
+#         S2=0
+#         wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
+#     if M1==10:
+#         M2+=1
+#         M1=0
+#         wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
     
-    #Hours
+#     #Hours
 
-    if M2==6:
-        H1+=1
-        M2=0
-        wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
-    if H1==10:
-        H2+=1
-        H1=0
-        wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
+#     if M2==6:
+#         H1+=1
+#         M2=0
+#         wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
+#     if H1==10:
+#         H2+=1
+#         H1=0
+#         wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
     
-    if H2==2 and H1==4:
-        H1=0
-        H2=0
-        wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
+#     if H2==2 and H1==4:
+#         H1=0
+#         H2=0
+#         wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
         
 
 
-def Stop():
-    pass
+# def Stop():
+#     pass
 
-def Restart():
-    pass
+# def Restart():
+#     pass
 
 
-frame=tk.Frame(window,bg="gray")
-frame.pack(side="top",padx=2,pady=2)
+# frame=tk.Frame(window,bg="gray")
+# frame.pack(side="top",padx=2,pady=2)
 
-start_button = tk.Button(frame, text="Start",font=("Comic Sans MS", 12), width=3, background="ivory", foreground="red", border=5, command=Start)
-start_button.pack(ipadx=10,padx=2,side=tk.LEFT)
+# start_button = tk.Button(frame, text="Start",font=("Comic Sans MS", 12), width=3, background="ivory", foreground="red", border=5, command=Start)
+# start_button.pack(ipadx=10,padx=2,side=tk.LEFT)
 
-stop_button = tk.Button(frame, text="Stop",font=("Comic Sans MS", 12), width=3, background="ivory", foreground="red", border=5, command=Stop)
-stop_button.pack(ipadx=10,padx=2,side=tk.LEFT)
+# stop_button = tk.Button(frame, text="Stop",font=("Comic Sans MS", 12), width=3, background="ivory", foreground="red", border=5, command=Stop)
+# stop_button.pack(ipadx=10,padx=2,side=tk.LEFT)
 
-restart_button = tk.Button(frame, text="Restart",font=("Comic Sans MS", 12), width=3, background="ivory", foreground="red", border=5, command=Restart)
-restart_button.pack(ipadx=20,padx=2,side=tk.LEFT)
+# restart_button = tk.Button(frame, text="Restart",font=("Comic Sans MS", 12), width=3, background="ivory", foreground="red", border=5, command=Restart)
+# restart_button.pack(ipadx=20,padx=2,side=tk.LEFT)
 
-window.mainloop()
+# window.mainloop()
+
+# def new_file():
+#     print("New File Created")
+
+# window=tk.Tk()
+# window.title("Multiple Menubutton")
+# window.geometry("400x300")
+
+# #======File MenuButton =========
+
+# file_menubutton=tk.Menubutton(window, text="File")
+# file_menubutton.grid(row=0, column=0, padx=10, pady=10)
+
+# file_menu=tk.Menu(file_menubutton, tearoff=0)
+# file_menu.add_command(label="New", command=new_file)
+# file_menu.add_command(label="Exit", command=window.quit)
+# file_menubutton.config(menu=file_menu)
+
+# #========= Menu Menubutton =========
+
+# menu_menubutton = tk.Menubutton(window, text="Menu")
+# menu_menubutton.grid(row=0, column=1, padx=10, pady=10)
+
+# menu_menu = tk.Menu(menu_menubutton, tearoff=0) #tearoff=1, detach menu
+# menu_menu.add_command(label="Open", command=new_file)
+# menu_menu.add_command(label="Save", command=new_file)
+# menu_menu.add_separator()
+
+# menu_menu.add_command(label="Exit", command=window.quit)
+# menu_menubutton.config(menu=menu_menu)
+
+# window.mainloop()
+
+# from tkinter import *
+
+# def selection():
+#     selected_language = "You selected the option: " + radio.get()
+#     label.config(text=selected_language)
+
+# window = Tk()
+# window.geometry("300x150")
+
+# radio = StringVar() # Change to StringVar instead of IntVar
+
+# lbl = Label(text="Favourite programming language:")
+# lbl.pack()
+
+# R1 = Radiobutton(window, text="C", variable=radio, value="C", command=selection)
+# R1.pack(anchor=W) #be n, ne, e, se, s, sw, w, nw, or center; Anchor position all capital letters
+
+# R2 = Radiobutton(window, text="C++", variable=radio, value="C++", command=selection)
+# R2.pack(anchor=W)
+
+# R3 = Radiobutton(window, text="Python", variable=radio, value="Python", command=selection)
+# R3.pack(anchor=W)
+
+# label = Label(window)
+# label.pack()
+
+# window.mainloop()
+
+
+# def select():
+#     sel = "Value = " + str(v.get())
+#     label.config(text=sel)
+
+# window = Tk()
+# window.geometry("200x100")
+# v = DoubleVar()
+# scale = Scale(window, variable=v, from_= 1, to=100, length=200, orient=HORIZONTAL)
+# scale.pack(anchor=CENTER)
+# btn = Button(window, text="Value", command=select)
+# btn.pack(anchor=CENTER)
+# label=Label(window)
+# label.pack()
+# window.mainloop()
+
+import tkinter as tk
+
+def on_scroll(*args):
+   """
+   Function to handle scrollbar movement and adjust the view of the Text widget accordingly.
+   """
+   text_widget.xview(*args)
+
+# Create the main Tkinter window
+root = tk.Tk()
+root.title("Adding a X-Scrollbar to Text Widget")
+# Set window dimensions
+root.geometry("720x250")
+
+# Step 1: Create a Text widget
+text_widget = tk.Text(root, wrap="none", width=40, height=10)
+text_widget.pack(padx=10, pady=10)
+
+# Step 2: Create a horizontal scrollbar
+xscrollbar = tk.Scrollbar(root, orient="horizontal")
+
+# Step 3: Link the scrollbar to the Text widget
+text_widget.config(xscrollcommand=xscrollbar.set)
+
+# Step 4: Configure the scrollbar to call the on_scroll function
+xscrollbar.config(command=on_scroll)
+
+# Pack the scrollbar to make it visible
+xscrollbar.pack(fill="x")
+
+# Step 5: Insert some text into the Text widget
+text_widget.insert("1.0", "This is Tutorialspoint.com-Simply Easy Learning At Your Fingertips. " * 10)
+
+# Start the Tkinter event loop
+root.mainloop()
