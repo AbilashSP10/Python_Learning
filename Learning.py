@@ -1290,7 +1290,7 @@ from tkinter import *
 # window.title("Stop Watch")
 
 # window.geometry("300x100")
-# window.configure(bg="ivory")
+# window.configure(bg="black")
 
 # S1=0
 # S2=0
@@ -1299,76 +1299,103 @@ from tkinter import *
 # H1=0
 # H2=0
 
-# wat_label=tk.Label(window, text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}",font=("Arial",20))
+# running = False
+# after_id =None
+
+# wat_label=tk.Label(window, text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}",font=("Comic Sans MS",20),background="black",foreground="ivory")
 # wat_label.pack(side=tk.TOP)
 
-# def Start():
-#     global S1
-#     global S2
-#     global M1
-#     global M2
-#     global H1
-#     global H2
+# def update_display():
+#     wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
 
+# def Start():
+#     global S1, S2, M1, M2, H1, H2, running, after_id
+    
+#     if not running:
+#         running=True
+#         count()
 #     #Seconds
 
-#     if S1<10:
-#         S1+=1
+# def count():
+    
+#     global S1, S2, M1, M2, H1, H2, after_id
+
+#     if not running:
+#         return
+
+    
+#     S1+=1
 #         # S2+=1
-#         wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
-#         window.after(10, Start)        
+#       #   wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
+#       #   window.after(10, Start)        
 #     if S1==10:
-#         S2+=1
 #         S1=0
-#         wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
+#         S2+=1
+#       #   S1=0
+#       #   wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
 
 #     #Minutes
 
 #     if S2==6:
-#         M1+=1
 #         S2=0
-#         wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
+#         M1+=1
+        
+#       #   wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
 #     if M1==10:
-#         M2+=1
 #         M1=0
-#         wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
+#         M2+=1
+        
+#       #   wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
     
 #     #Hours
 
 #     if M2==6:
-#         H1+=1
 #         M2=0
-#         wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
+#         H1+=1
+        
+#       #   wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
 #     if H1==10:
-#         H2+=1
 #         H1=0
-#         wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
+#         H2+=1
+       
+#       #   wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
     
 #     if H2==2 and H1==4:
-#         H1=0
 #         H2=0
-#         wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
-        
+#         H1=0
+#       #   wat_label.config(text=f"{H2}{H1}:{M2}{M1}:{S2}{S1}")
+#     update_display()
+#     after_id = window.after(10, count)
 
 
 # def Stop():
-#     pass
+#     global running, after_id
+#     running = False
+#     if after_id is not None:
+#         window.after_cancel(after_id)
+#         after_id = None
 
 # def Restart():
-#     pass
+#     global S1, S2, M1, M2, H1, H2, running, after_id
+#     Stop()  # Stop the current timer
+#     S1 = S2 = M1 = M2 = H1 = H2 = 0
+#     update_display()
 
 
-# frame=tk.Frame(window,bg="gray")
+# frame=tk.Frame(window,bg="black")
 # frame.pack(side="top",padx=2,pady=2)
 
-# start_button = tk.Button(frame, text="Start",font=("Comic Sans MS", 12), width=3, background="ivory", foreground="red", border=5, command=Start)
+# start_button = tk.Button(frame, text="Start",font=("Comic Sans MS", 12), width=3, background="ivory", foreground="black", border=3, command=Start)
 # start_button.pack(ipadx=10,padx=2,side=tk.LEFT)
 
-# stop_button = tk.Button(frame, text="Stop",font=("Comic Sans MS", 12), width=3, background="ivory", foreground="red", border=5, command=Stop)
+# stop_button = tk.Button(frame, text="Stop",font=("Comic Sans MS", 12), width=3, background="ivory", foreground="black", border=5, command=Stop)
 # stop_button.pack(ipadx=10,padx=2,side=tk.LEFT)
 
-# restart_button = tk.Button(frame, text="Restart",font=("Comic Sans MS", 12), width=3, background="ivory", foreground="red", border=5, command=Restart)
+# restart_button = tk.Button(frame, text="Restart",font=("Comic Sans MS", 12), width=3, background="ivory", foreground="black", border=5, command=Restart)
 # restart_button.pack(ipadx=20,padx=2,side=tk.LEFT)
+
+# exit_button = tk.Button(frame, text="Exit",font=("Comic Sans MS", 12), width=3, background="ivory", foreground="black", border=5, command=window.quit)
+# exit_button.pack(ipadx=20,padx=2,side=tk.LEFT)
 
 # window.mainloop()
 
@@ -1448,38 +1475,65 @@ from tkinter import *
 # label.pack()
 # window.mainloop()
 
-import tkinter as tk
+from tkinter import *
 
-def on_scroll(*args):
-   """
-   Function to handle scrollbar movement and adjust the view of the Text widget accordingly.
-   """
-   text_widget.xview(*args)
+# window = Tk()
+# window.title("Text with One Scrollbar vertical")
+# window.geometry("100x100")
 
-# Create the main Tkinter window
-root = tk.Tk()
-root.title("Adding a X-Scrollbar to Text Widget")
-# Set window dimensions
-root.geometry("720x250")
+# #Create Text widget inside the Frame
+# frame=Frame(window)
+# frame.pack(fill=BOTH,expand=True)
 
-# Step 1: Create a Text widget
-text_widget = tk.Text(root, wrap="none", width=40, height=10)
-text_widget.pack(padx=10, pady=10)
+# text = Text(frame, wrap=NONE)
+# text.grid(row=0, column=0, sticky="nsew")
 
-# Step 2: Create a horizontal scrollbar
-xscrollbar = tk.Scrollbar(root, orient="horizontal")
+# #create Vertical Scrollbar
 
-# Step 3: Link the scrollbar to the Text widget
-text_widget.config(xscrollcommand=xscrollbar.set)
+# v_scrollbar = Scrollbar(frame, orient=VERTICAL, command=text.yview)
+# v_scrollbar.grid(row=0, column=1, sticky="ns")
 
-# Step 4: Configure the scrollbar to call the on_scroll function
-xscrollbar.config(command=on_scroll)
+# #connect Scrollbar to Text widget
 
-# Pack the scrollbar to make it visible
-xscrollbar.pack(fill="x")
+# # text.config(yscrollcommand=v_scrollbar.set)
 
-# Step 5: Insert some text into the Text widget
-text_widget.insert("1.0", "This is Tutorialspoint.com-Simply Easy Learning At Your Fingertips. " * 10)
+# h_scrollbar = Scrollbar(frame, orient=HORIZONTAL, command=text.xview)
+# h_scrollbar.grid(row=1, column=0, sticky="ew")
 
-# Start the Tkinter event loop
-root.mainloop()
+# #connect Scrollbar to Text widget
+
+# text.config(yscrollcommand=v_scrollbar.set,xscrollcommand=h_scrollbar.set)
+
+# #Make the frame expand properly
+
+# frame.rowconfigure(0, weight=1)
+# frame.columnconfigure(0, weight=1)
+
+# #Insert enough sample text to overflow
+
+# for i in range(100):
+#     text.insert(END, f"Line number {i}\n")
+
+# window.mainloop()
+
+# window = Tk()
+# window.geometry("200x200")
+# spinbox = Spinbox(window, from_=0, to=25)
+# spinbox.pack()
+# window.mainloop()
+
+# window = Tk()
+# window = Toplevel()
+# window.mainloop()
+
+from tkinter import *
+
+# window = Tk()
+
+# group = LabelFrame(window, text="Group", padx=5, pady=5)
+# group.pack(padx=10, pady=10)
+# w = Entry(group)
+# w.pack()
+# left = Label(group, text="Inside the LabelFrame")
+# left.pack()
+# window.mainloop()
