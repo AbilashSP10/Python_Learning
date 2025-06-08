@@ -28,6 +28,8 @@ def clear_window():
 def Login():
     clear_window()
 
+    root.geometry("350x300")
+
     tk.Label(root, text="Login",font=("Calibri", 25, "bold"),fg="white",bg="#008080").pack(pady=15)
 
     frame1=tk.Frame(root,background="#008080")
@@ -47,7 +49,23 @@ def Login():
     frame3=tk.Frame(root,background="#008080")
     frame3.pack(side="top")
 
-    
+    def show_user_details(user):
+        if user:
+            detail_window = tk.Toplevel(root)
+            detail_window.title("User Details")
+            detail_window.geometry("300x200")
+            detail_window.configure(bg="#008080")
+
+            labels = ["User_ID", "Username", "Password", "Email", "Phone"]
+            for i, value in enumerate(user):
+                # if labels[i] =="ID":
+                #     value=""
+                if labels[i] == "Password":
+                    value = "********"
+                tk.Label(detail_window, text=f"{labels[i]}: {value}", font=("Calibri", 12, "bold"), fg="white", bg="#008080").pack(pady=5)
+        else:
+            messagebox.showerror("Error", "Could not retrieve user details.")
+
 
     def dashboard():
 
@@ -59,6 +77,8 @@ def Login():
         if Suser=="admin" and Spass=="admin123":       
 
             root.title("Admin Window")
+
+            root.geometry("550x500")            
 
             framec = tk.Frame(root, bg="#008080", bd=2, relief="groove")
             framec.pack(fill="both", expand=True, padx=10, pady=10)
@@ -107,18 +127,34 @@ def Login():
 
                 if not selected_item:
                     messagebox.showwarning("Warning", "Please select a user first.")
+                    return
 
-                elif user_data[1] == "admin":
+                if user_data[1] == "admin":
                     messagebox.showerror("Error", "Cannot delete admin account.")
-
-                else:
-                    messagebox.askyesno("Confirm", f"Delete user {user_data[1]}?")
+                    return
+                
+                confirm = messagebox.askyesno("Confirm", f"Are you sure you want to delete user '{user_data[1]}'?")
+                if confirm:
                     cursor.execute("DELETE FROM users WHERE ID=?", (user_data[0],))
                     conn.commit()
-                    tree.delet(selected_item)
-                    messagebox.showinfo("Success", "User deleted successfully.")
+                    tree.delete(selected_item)
+                    messagebox.showinfo("Success", f"User '{user_data[1]}' deleted successfully.")
 
-        elif cursor.execute("SELECT username, email, phone FROM users WHERE username = ? AND password = ?", (Suser,Spass)):
+                # else:
+                #     messagebox.askyesno("Confirm", f"Delete user {user_data[1]}?")
+                #     cursor.execute("DELETE FROM users WHERE ID=?", (user_data[0],))
+                #     conn.commit()
+                #     tree.delete(selected_item)
+                #     messagebox.showinfo("Success", "User deleted successfully.")
+            btn_frame = tk.Frame(framec, bg="#008080")
+            btn_frame.pack(side="top")
+
+            tk.Button(btn_frame, text="Delete User", font=("Calibri", 12, "bold"), bg="green", fg="white", command=delete_user).pack(side=tk.LEFT, padx=10)
+            tk.Button(btn_frame, text="View Details", font=("Calibri", 12, "bold"), bg="blue", fg="white", command=view_user_details).pack(side=tk.LEFT, padx=10)
+            tk.Button(btn_frame, text="Logout", font=("Calibri", 12, "bold"), bg="red", fg="white", command=Login).pack(side=tk.LEFT, padx=10)
+            
+        else:
+            cursor.execute("SELECT username, email, phone FROM users WHERE username = ? AND password = ?", (Suser,Spass))
             user1=cursor.fetchone()
 
             if user1:            
@@ -133,8 +169,13 @@ def Login():
                 tk.Label(framen,text=f"Email: {email}",font=("Calibri", 15, "bold"),fg="white",bg="#008080").pack(pady=10,side=tk.TOP)
                 tk.Label(framen,text=f"Phone: {phone}",font=("Calibri", 15, "bold"),fg="white",bg="#008080").pack(pady=10,side=tk.TOP)
 
-        else:            
-            messagebox.showerror("Error", "Invalid Credentials")
+                btn_frame = tk.Frame(framen, bg="#008080")
+                btn_frame.pack(side="top")
+
+                tk.Button(btn_frame, text="Logout", font=("Calibri", 12, "bold"), bg="red", fg="white", command=Login).pack(side=tk.LEFT, padx=10) 
+
+            else:            
+                messagebox.showerror("Error", "Invalid Credentials")
 
     tk.Button(frame3,text="Login",font=("Calibri", 15, "bold"),command=dashboard).pack(side=tk.LEFT,padx=10)
     tk.Button(frame3,text="Register",font=("Calibri", 15, "bold"),command=Register).pack(side=tk.LEFT)
@@ -159,6 +200,7 @@ def Register():
     clear_window()
 
     root.title("Register Window")
+    root.geometry("350x400")
 
     tk.Label(root,text="Register", font=("Calibri", 25, "bold"), fg="white", bg="#008080").pack(side=tk.TOP)
 
