@@ -4,6 +4,40 @@ import sqlite3
 import csv
 from tkinter import filedialog
 
+# # pip install mysql-connector-python
+
+# import mysql.connector
+# from mysql.connector import Error
+
+# # ...existing code ....
+
+# try:
+#     conn = mysql.connector.connect(
+#         host='localhost',
+#         user='root',  # default XAMPP/WAMP user
+#         password='', # default is empty for XAMPP/WAMP
+#         database='admin' # make sure this DB exists in phpMyAdmin        
+#     )
+#     cursor = conn.cursor()
+#     cursor.execute('''
+#         CREATE TABLE IF NOT EXISTS users(
+#             id INT AUTO_INCREMENT PRIMARY KEY,
+#             username VARCHAR(255) UNIQUE NOT NULL,
+#             password VARCHAR(255) NOT NULL,
+#             email VARCHAR(255),
+#             phone VARCHAR(20)
+#         )
+                   
+#     ''')
+
+# except Error as e:
+#     print(f"Error connecting to MySQL: {e}")
+#     exit(1)
+
+# #.... existing code
+
+
+
 conn = sqlite3.connect('admin.db')
 cursor = conn.cursor() # it allows to execute the query
 cursor.execute('''
@@ -27,6 +61,8 @@ def clear_window():
 
 def Login():
     clear_window()
+
+    root.title("Login/Register Example")
 
     root.geometry("350x300")
 
@@ -65,6 +101,24 @@ def Login():
                 tk.Label(detail_window, text=f"{labels[i]}: {value}", font=("Calibri", 12, "bold"), fg="white", bg="#008080").pack(pady=5)
         else:
             messagebox.showerror("Error", "Could not retrieve user details.")
+
+
+    def export_to_csv():
+        file_path = filedialog.asksaveasfilename(
+            defaultextension=".csv",
+            filetypes=[("CSV files", "*.csv")],
+            title="Save user data as",
+            initialfile="users.csv"
+        )
+
+        if file_path:
+            cursor.execute("SELECT * From users")
+            users = cursor.fetchall()
+            with open(file_path, 'w', newline='') as file:
+                writer=csv.writer(file)
+                writer.writerow(["ID", "Username", "Password", "Email", "Phone"])
+                writer.writerows(users)
+            messagebox.showinfo("Sucess", f"User data exported to {file_path}")
 
 
     def dashboard():
@@ -151,6 +205,7 @@ def Login():
 
             tk.Button(btn_frame, text="Delete User", font=("Calibri", 12, "bold"), bg="green", fg="white", command=delete_user).pack(side=tk.LEFT, padx=10)
             tk.Button(btn_frame, text="View Details", font=("Calibri", 12, "bold"), bg="blue", fg="white", command=view_user_details).pack(side=tk.LEFT, padx=10)
+            tk.Button(btn_frame, text="Save CSV", font=("Calibri", 12, "bold"), bg="white", fg="black", command=export_to_csv).pack(side=tk.LEFT, padx=10)
             tk.Button(btn_frame, text="Logout", font=("Calibri", 12, "bold"), bg="red", fg="white", command=Login).pack(side=tk.LEFT, padx=10)
             
         else:
