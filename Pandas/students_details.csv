@@ -1,0 +1,9 @@
+id,name,age,place,maths,english,science
+1,ram,23,tvm,-99,95,92
+2,anu,55,ngl,67,86,77
+3,vinoth,28,tvm,-90,56,67
+4,arun,34,ngl,88,46,93
+5,arun,34,ngl,45,89,90
+6,,55,ngl,100,,90
+7,vinu,22,tvm,67,80,92.45
+8,ram,25,ngl,56,89,78.897
